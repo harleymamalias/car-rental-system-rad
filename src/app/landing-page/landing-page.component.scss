@@ -1,0 +1,46 @@
+a {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.superNav {
+    font-size: 17px;
+}
+
+.background-image {
+    background-image: url('../../assets/Landing-Page-BG.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 90vh; 
+     width: 100%;
+}
+
+.how-it-works-image {
+    background-image: url('../../assets/How-It-Works-BG.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; 
+    width: 100%;
+}
+
+.car-logos {
+    background-image: url('../../assets/Car-Logos.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 20vh; 
+    // width: 100%;
+}
+
+@media screen and (max-width: 548px) {
+    .background-image,
+    .how-it-works-image {
+        height: 300px; 
+    }
+
+    .centerOnMobile {
+        text-align: center;
+    }
+}
