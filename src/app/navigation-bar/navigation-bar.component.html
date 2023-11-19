@@ -1,1 +1,38 @@
-<p>navigation-bar works!</p>
+<nav class="navbar navbar-expand-lg bg-white sticky-top navbar-light p-0 shadow-sm" style="height: 120px;">
+    <div class="container" style="margin: 0 15px; max-width: 100%;">
+        <a class="navbar-brand" href="#" style="height: 100%;">
+            <img src="assets/rad-logo-icon.svg" height="80" alt="RentAndDriveLogo" loading="lazy"/>
+            <img src="assets/rad-logo-text.svg" height="150" alt="RentAndDriveLogo" loading="lazy"/>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link mx-2 text-uppercase active" aria-current="page" [routerLink]="['']">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mx-2 text-uppercase" href="#">CARS FOR RENT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mx-2 text-uppercase" href="#">ABOUT US</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mx-2 text-uppercase" href="#">CONTACT US</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link mx-2 text-uppercase" href="#"><i class="fa-solid fa-cart-shopping me-1"></i>SIGN IN</a>
+                </li>
+                <li class="nav-item login-button">
+                    <a [routerLink]="['/login-page']" class="nav-link mx-2 text-uppercase text-white">
+                        <i class="fa-solid fa-circle-user text-white"></i> LOGIN
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
