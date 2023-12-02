@@ -6,7 +6,7 @@ import { RegistrationPageComponent } from './registration-page/registration-page
 import { SideNavigationBarComponent } from './side-navigation-bar/side-navigation-bar.component';
 
 const routes: Routes = [
-  {path: '', component: LandingPageComponent},
+  {path: 'landing-page', component: LandingPageComponent},
   {path: 'login-page', component: LoginPageComponent},
   {path: 'registration-page', component: RegistrationPageComponent},
   {path: 'side-navigation-bar', component: SideNavigationBarComponent}

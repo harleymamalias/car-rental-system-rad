@@ -16,6 +16,7 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AddCarDetailsComponent } from './add-car-details/add-car-details.component';
 
 @NgModule({
@@ -46,6 +47,7 @@ import { AddCarDetailsComponent } from './add-car-details/add-car-details.compon
     provideDatabase(() => getDatabase()),
     FormsModule,
     ReactiveFormsModule,
+    AngularFireAuthModule,
   ],
   providers: [
     { provide: FIREBASE_OPTIONS, useValue: {
