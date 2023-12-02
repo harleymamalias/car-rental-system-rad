@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -12,6 +11,13 @@ import { SideNavigationBarComponent } from './side-navigation-bar/side-navigatio
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { getDatabase, provideDatabase } from '@angular/fire/database';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FruitsComponent } from './fruits/fruits.component';
+import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { AddCarDetailsComponent } from './add-car-details/add-car-details.component';
 
 @NgModule({
   declarations: [
@@ -21,16 +27,38 @@ import { MatIconModule } from '@angular/material/icon';
     LoginPageComponent,
     RegistrationPageComponent,
     SideNavigationBarComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    FruitsComponent,
+    AddCarDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    provideFirebaseApp(() => initializeApp({
+      apiKey: "AIzaSyBlzx0KKDfrIuqOTKchH3rarpujslTfEe8",
+      authDomain: "rentanddrive-angular.firebaseapp.com",
+      projectId: "rentanddrive-angular",
+      storageBucket: "rentanddrive-angular.appspot.com",
+      messagingSenderId: "1029085339817",
+      appId: "1:1029085339817:web:9b47e9b21df8b24edd09b8"})),
+    provideFirestore(() => getFirestore()),
+    provideDatabase(() => getDatabase()),
+    FormsModule,
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    { provide: FIREBASE_OPTIONS, useValue: {
+      apiKey: "AIzaSyBlzx0KKDfrIuqOTKchH3rarpujslTfEe8",
+      authDomain: "rentanddrive-angular.firebaseapp.com",
+      projectId: "rentanddrive-angular",
+      storageBucket: "rentanddrive-angular.appspot.com",
+      messagingSenderId: "1029085339817",
+      appId: "1:1029085339817:web:9b47e9b21df8b24edd09b8"
+    }}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

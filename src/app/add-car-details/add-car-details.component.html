@@ -1,0 +1,87 @@
+<!-- add-car-details.component.html -->
+
+<div class="add-car-details-container mt-5">
+    <div class="container">
+      <h2>ADD A NEW VEHICLE</h2>
+      <form [formGroup]="carForm" (ngSubmit)="onSubmit()">
+        <div class="row mb-3">
+          <div class="col-md-4 mt-3">
+            <div class="form-group">
+              <label for="validationCustom01">Make</label>
+              <input type="text" class="form-control" id="validationCustom01" placeholder="" formControlName="make" required>
+            </div>
+          </div>
+          <div class="col-md-4 mt-3">
+            <div class="form-group w-100">
+              <label for="carType">Car Type</label>
+              <select class="form-select text-left" id="carType" formControlName="carType" required>
+                <option value="Sports Car">Sports Car</option>
+                <option value="Electric Car">Electric Car</option>
+                <option value="Manual Transmission">Manual Transmission</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-4 mt-3">
+            <div class="form-group w-100">
+              <label for="fuelType">Fuel Type</label>
+              <select class="form-select text-left" id="fuelType" formControlName="fuelType" required>
+                <option value="Petrol">Petrol</option>
+                <option value="Electric">Electric</option>
+                <option value="Manual">Manual</option>
+              </select>
+            </div>
+          </div>
+        </div> 
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="validationCustom01">Model</label>
+              <input type="text" class="form-control" id="validationCustom01" placeholder="" formControlName="model" required>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="validationCustom01">Seat Capacity</label>
+              <input type="number" class="form-control" id="validationCustom01" placeholder="" formControlName="seatCapacity" required>
+            </div>
+          </div>
+        </div>
+  
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="validationCustom01">Year</label>
+              <input type="number" class="form-control" id="validationCustom01" placeholder="" formControlName="year" min="2000" max="2023" required>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="validationCustom01">Booking Price</label>
+              <input type="number" class="form-control" id="validationCustom01" placeholder="" formControlName="price" min="2000" max="2023" required>
+            </div>
+          </div>
+          
+        </div>
+  
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="formFileMultiple" class="form-label">Car Images</label>
+              <input class="form-control" type="file" id="formFileMultiple" multiple formControlName="carImages">
+            </div>
+          </div>
+          <!-- Add other fields as needed -->
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Add Car Details</button>
+      </form>
+      <br>
+      <ul>
+        <li *ngFor="let cars of carDetails$ | async">
+          {{ cars.make }} - {{ cars.model }} - {{ cars.fuelType }}
+          <button (click)="deleteItem(cars.id)">Delete</button>
+        </li>
+      </ul>      
+    </div>
+  </div>
+  

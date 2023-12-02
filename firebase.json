@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "car-rental-system-rad",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}
