@@ -27,7 +27,7 @@ export class LoginPageComponent {
         console.log('Login successful', user);
 
         // Redirect to the home page or any other page after successful login
-        this.router.navigate(['/landing-page']);
+        this.router.navigate(['']);
       })
       .catch(error => {
         console.error('Login error', error);
