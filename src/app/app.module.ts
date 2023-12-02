@@ -36,12 +36,12 @@ import { AddCarDetailsComponent } from './add-car-details/add-car-details.compon
     BrowserAnimationsModule,
     MatIconModule,
     provideFirebaseApp(() => initializeApp({
-      apiKey: "AIzaSyBlzx0KKDfrIuqOTKchH3rarpujslTfEe8",
-      authDomain: "rentanddrive-angular.firebaseapp.com",
-      projectId: "rentanddrive-angular",
-      storageBucket: "rentanddrive-angular.appspot.com",
-      messagingSenderId: "1029085339817",
-      appId: "1:1029085339817:web:9b47e9b21df8b24edd09b8"})),
+      apiKey: "AIzaSyABE3NZNOp5EsGAr18A7NBGhlUIjTKfHuo",
+      authDomain: "rentanddrive-angular-1e5ec.firebaseapp.com",
+      projectId: "rentanddrive-angular-1e5ec",
+      storageBucket: "rentanddrive-angular-1e5ec.appspot.com",
+      messagingSenderId: "692514391678",
+      appId: "1:692514391678:web:49be852647a85d1d293a2f"})),
     provideFirestore(() => getFirestore()),
     provideDatabase(() => getDatabase()),
     FormsModule,
@@ -49,12 +49,12 @@ import { AddCarDetailsComponent } from './add-car-details/add-car-details.compon
   ],
   providers: [
     { provide: FIREBASE_OPTIONS, useValue: {
-      apiKey: "AIzaSyBlzx0KKDfrIuqOTKchH3rarpujslTfEe8",
-      authDomain: "rentanddrive-angular.firebaseapp.com",
-      projectId: "rentanddrive-angular",
-      storageBucket: "rentanddrive-angular.appspot.com",
-      messagingSenderId: "1029085339817",
-      appId: "1:1029085339817:web:9b47e9b21df8b24edd09b8"
+      apiKey: "AIzaSyABE3NZNOp5EsGAr18A7NBGhlUIjTKfHuo",
+      authDomain: "rentanddrive-angular-1e5ec.firebaseapp.com",
+      projectId: "rentanddrive-angular-1e5ec",
+      storageBucket: "rentanddrive-angular-1e5ec.appspot.com",
+      messagingSenderId: "692514391678",
+      appId: "1:692514391678:web:49be852647a85d1d293a2f"
     }}
   ],
   bootstrap: [AppComponent]
