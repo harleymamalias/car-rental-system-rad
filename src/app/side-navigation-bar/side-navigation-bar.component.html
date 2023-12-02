@@ -1,13 +1,172 @@
-<div class="container-fluid parentContainer">
-    <div class="container child-1">
-
-        <img src="assets\sidebar-rad-logo.svg" class="img-fluid" alt="Image">  
-        <div class="btn-group-vertical btn-nav" role="group" aria-label="Vertical button group">
-            <button type="button" class="btn navbtn"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home" class="iconSize"></mat-icon>HOME</button>
-            <a routerLink="/userpage" class="userpage"><button type="button" class="btn navbtn"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="directions_car" class="iconSize"></mat-icon>CARS FOR RENT</button></a>
-            <button type="button" class="btn navbtn active"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="car_rental" class="iconSize"></mat-icon>RENTED VEHICLES</button>
-            <button type="button" class="btn navbtn btn-sign-out"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="logout  " class="iconSize"></mat-icon>SIGN OUT</button>
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+      <img src="../../assets/sidebar-rad-logo.svg" alt="Logo" class="sidebar-logo">
+      <div class="sidebar-header">
+        <!-- <h3>Bootstrap Sidebar</h3> -->
+      </div>
+      <ul class="list-unstyled components">
+        <!-- <p>Dummy Heading</p> -->
+        <li>
+          <a href="#">
+            <i class="bi bi-house"></i> Home
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bi bi-house"></i> About
+          </a>
+        </li>
+        <li>
+          <a href="#pageSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <i class="bi bi-file-earmark"></i> Pages
+          </a>
+          <ul class="collapse list-unstyled" id="pageSubmenu">
+            <li>
+              <a href="#"><i class="bi bi-file-earmark-text"></i> Page 1</a>
+            </li>
+            <li>
+              <a href="#"><i class="bi bi-file-earmark-text"></i> Page 2</a>
+            </li>
+            <li>
+              <a href="#"><i class="bi bi-file-earmark-text"></i> Page 3</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bi bi-folder"></i> Portfolio
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bi bi-envelope"></i> Contact
+          </a>
+        </li>
+      </ul>
+    </nav>
+  
+    <!-- Page Content  -->
+    <div id="content">
+  
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <button type="button" id="sidebarCollapse" class="btn btn-info">
+            <i class="fas fa-align-left"></i>
+            <i class="bi bi-menu-app"></i>
+          </button>
+          <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-list"></i>
+          </button>
+  
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">
+                  <i class="bi bi-file-earmark"></i> Page
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="bi bi-file-earmark"></i> Page
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="bi bi-file-earmark"></i> Page
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="bi bi-file-earmark"></i> Page
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-
+      </nav>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3 total-bookings">
+            <i class="bi bi-journal-plus"></i>
+            Total Bookings           
+          </div>
+          <div class="col-sm-3 number-of-clients">
+            <i class="bi bi-people-fill"></i>
+            Number of Clients
+          </div>
+          <div class="col-sm-3 total-earnings">
+            <i class="bi bi-cash-coin"></i>
+            Total Earnings
+          </div>
+        </div>
+      </div>
+      <br><br><br>
+      <app-add-car-details></app-add-car-details>
+      <br>
+      <div class="recent-bookings-container">
+        <h2>RECENT CAR BOOKINGS</h2>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">BOOKING ID</th>
+              <th scope="col">CAR MODEL</th>
+              <th scope="col">STATUS</th>
+              <th scope="col">DATE</th>
+              <th scope="col">AMOUNT</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+              <td>@mdo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br><br><br>
+  
     </div>
-</div>
+  </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var sidebarCollapse = document.getElementById('sidebarCollapse');
+      sidebarCollapse.addEventListener('click', function () {
+        var sidebar = document.getElementById('sidebar');
+        sidebar.classList.toggle('active');
+      });
+    });
+  </script>
