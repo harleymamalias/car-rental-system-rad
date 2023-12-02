@@ -15,7 +15,6 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FruitsComponent } from './fruits/fruits.component';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { AddCarDetailsComponent } from './add-car-details/add-car-details.component';
 
@@ -28,7 +27,6 @@ import { AddCarDetailsComponent } from './add-car-details/add-car-details.compon
     RegistrationPageComponent,
     SideNavigationBarComponent,
     AdminDashboardComponent,
-    FruitsComponent,
     AddCarDetailsComponent
   ],
   imports: [
