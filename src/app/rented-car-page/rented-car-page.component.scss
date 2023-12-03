@@ -17,9 +17,9 @@
     height: 100vh;
     background-color: #ffffff;
     color: black;
-    box-shadow: 0px 0 5px rgb(151, 147, 147);
+    box-shadow: 5px 0 10px rgb(151, 147, 147);
     padding: 0;
-    border-right: 1px solid rgba(0, 0, 0, 0.267); 
+    border-right: 1px solid rgba(0, 0, 0, 0.267);
 }
 
 .navbtn{
@@ -32,9 +32,8 @@
     padding-top: 14px;  
     background-color: white;
     border-radius: 10px !important;
-    margin-top: 15%;
-    display: flex;
-    margin-bottom: 10px; 
+    margin-top: 7%;
+    display: flex; 
 }
 
 .navbtn:hover{
@@ -53,7 +52,7 @@
 }
 
 .btn-sign-out{
-    margin-top: 325px !important;
+    margin-top: 175% !important;
 }
 
 .iconSize{
@@ -63,11 +62,6 @@
 a{
     text-decoration: none;
 }
-
-.userpage{
-    margin-top: -15.8%;
-}
-
 
 
 //---------------CHILD-2-----------//
