@@ -1,0 +1,144 @@
+.parentContainer{
+    display: flex !important;
+    flex-wrap: wrap;
+    flex-direction: row !important;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(250, 243, 243);
+}
+
+
+//---------------CHILD-1-----------//
+.child-1{
+    width: 250px;
+    margin-left: 0;
+    height: 100vh;
+    background-color: #ffffff;
+    color: black;
+    box-shadow: 0px 0 5px rgb(151, 147, 147);
+    padding: 0;
+    border-right: 1px solid rgba(0, 0, 0, 0.267); 
+}
+
+.navbtn{
+    color: black;
+    border: none;
+    width: 228px;
+    height: 50px; 
+    text-align: start; 
+    justify-content: flex-start; 
+    padding-top: 14px;  
+    background-color: white;
+    border-radius: 10px !important;
+    margin-top: 15%;
+    display: flex;
+    margin-bottom: 10px; 
+}
+
+.navbtn:hover{
+    color: white;
+    background-color: rgb(173, 167, 167);
+}
+
+.active{
+    color: white;
+    background-color: rgb(160, 7, 7);
+}
+
+.btn-nav{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.btn-sign-out{
+    margin-top: 325px !important;
+}
+
+.iconSize{
+    font-size: 20px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.userpage{
+    margin-top: -15.8%;
+}
+
+
+
+//---------------CHILD-2-----------//
+.child-2{
+    flex: 1;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+
+//---------------SUBCHILD-1-----------//
+.subchild-1{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 3%;
+    margin-left: 1%
+}
+
+.btn-menu{
+    width: 33px;
+    height: 30px;
+}
+    
+.btn-alarm{
+    width: 35px;
+    height: 30px;
+    margin-left: 76.8%;
+}
+    
+.btn-user{
+    width: 38px;
+    height: 30px;
+    margin-left: 1%;
+}
+    
+.user-info{
+    height: 43px;
+    width: 60px;
+    margin-left: 1%;
+}
+    
+.user-name{
+    font-weight: 700;
+    text-decoration: none;
+    color: black;
+}
+    
+.user-type{
+    text-decoration: none;
+    color: black;
+}
+    
+.btn-arrow{
+    width: 27px;
+    height: 30px;
+    margin-left: 1%;
+}
+
+
+//---------------SUBCHILD-2-----------//
+
+.grandchild-1{
+    margin-top: 3%;
+}
+
+h1{
+    font-weight: 700;
+}
+
+.header{
+    background-color: rgb(160, 7, 7);
+    color: white;
+}

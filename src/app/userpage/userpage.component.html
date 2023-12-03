@@ -1,0 +1,59 @@
+<div class="container-fluid parentContainer">
+    <div class="container-fluid child-1">
+        <img src="assets\userpage-logo.svg" class="img-fluid" alt="Image">        
+        <div class="btn-group-vertical btn-nav" role="group" aria-label="Vertical button group">
+            <button type="button" class="btn navbtn"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home" class="iconSize"></mat-icon>HOME</button>
+            <button type="button" class="btn navbtn active"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="directions_car" class="iconSize"></mat-icon>CARS FOR RENT</button>
+            <a routerLink="/rented" class="rent"><button type="button" class="btn navbtn"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="car_rental" class="iconSize"></mat-icon>RENTED VEHICLES</button></a>
+            <button type="button" class="btn navbtn btn-sign-out"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="logout  " class="iconSize"></mat-icon>SIGN OUT</button>
+        </div>
+    </div>
+
+    <div class="container child-2">
+        <app-search></app-search>
+        <app-tags></app-tags>        
+        
+        <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example p-3 rounded-2 child-3" tabindex="0">
+            <ul>
+                <li *ngFor="let car of cars">
+                    <a routerLink="/car/{{car.id}}">
+                        <div class="imageUrl">
+                            <button type="button" class="btn btn-danger compactbtn">Compact</button>
+                            <img src="{{car.imageUrl}}" alt="" class="image1">
+                        </div>
+                        
+                        <div class="content1">
+                            <div class="carname">
+                                {{car.carName}}
+                            </div>
+
+                            <p class="features">Features</p>
+
+                            <div class="capacity">
+                                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="groups" class="groups"></mat-icon><span class="carCapacity">{{car.capacity}}</span>
+                                
+                               <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="electric_car" class="electricCar"></mat-icon><span class="carType">{{car.carType}} </span>                               
+                            </div>
+                            
+                            <div class="mileagecap">
+                                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="gas_meter" class="mileage"></mat-icon><span class="cap">{{car.mileageCap}}</span>
+                            </div>
+                        </div>
+
+                        <div class="content2">
+                            <div class="carPrice">
+                                <span class="price">₱ {{car.price}}</span><p class="label">per day</p>
+                            </div>
+
+                            <div class="book">
+                                <button type="button" class="btn btn-danger bookbtn">BOOK NOW</button>
+                            </div>
+                        </div>
+                    </a>
+                    
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+

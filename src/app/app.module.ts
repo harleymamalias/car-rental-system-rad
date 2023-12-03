@@ -18,6 +18,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AddCarDetailsComponent } from './add-car-details/add-car-details.component';
+import { UserSideBarComponent } from './user-side-bar/user-side-bar.component';
+import { TagsComponent } from './tags/tags.component';
+import { SearchComponent } from './search/search.component';
+import { UserpageComponent } from './userpage/userpage.component';
+import { RentedCarPageComponent } from './rented-car-page/rented-car-page.component';
+import { CarPageComponent } from './car-page/car-page.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +34,13 @@ import { AddCarDetailsComponent } from './add-car-details/add-car-details.compon
     RegistrationPageComponent,
     SideNavigationBarComponent,
     AdminDashboardComponent,
-    AddCarDetailsComponent
+    AddCarDetailsComponent,
+    UserSideBarComponent,
+    TagsComponent,
+    SearchComponent,
+    UserpageComponent,
+    RentedCarPageComponent,
+    CarPageComponent
   ],
   imports: [
     BrowserModule,

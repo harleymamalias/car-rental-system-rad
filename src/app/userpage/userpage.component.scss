@@ -1,0 +1,229 @@
+.parentContainer{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+//--------------CHILD-1-------------
+
+.child-1{
+    width: 250px;
+    margin-left: 0;
+    height: 100vh;
+    background-color: #ffffff;
+    color: black;
+    box-shadow: 5px 0 10px rgb(151, 147, 147);
+    padding: 0;
+    border-right: 1px solid rgba(0, 0, 0, 0.267);
+}
+
+.navbtn{
+    color: black;
+    border: none;
+    width: 228px;
+    height: 50px; 
+    text-align: start; 
+    justify-content: flex-start; 
+    padding-top: 14px;  
+    background-color: white;
+    border-radius: 10px !important;
+    margin-top: 15%;
+    display: flex;
+    margin-bottom: 10px; 
+}
+
+.navbtn:hover{
+    color: white;
+    background-color: rgb(173, 167, 167);
+}
+
+.active{
+    color: white;
+    background-color: rgb(160, 7, 7);
+}
+
+.btn-nav{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.btn-sign-out{
+    margin-top: 325px !important;
+}
+
+.iconSize{
+    font-size: 20px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.rent{
+    margin-top: -15%;
+}
+
+
+//----------CHILD-2----------------
+
+.child-2{
+    height: 100vh;
+    width: fit-content;
+    background-color: rgb(250, 243, 243);
+    flex: 1;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+}
+
+li a{
+    height: 21.8rem;
+    width: 20rem;
+    border-radius: 1rem;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: blue;
+    text-decoration: none;
+}
+
+li a:hover{
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.imageUrl{
+    background-color: #D9D9D9;
+    padding: 5%;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.image1{
+    width: 155px;
+    height: 107px;
+}
+
+.compactbtn{
+    margin-left: -62%;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background-color: rgb(160, 7, 7);
+}
+
+.content1{
+    color: black;
+    padding-left: 3%;
+    background-color: #ffffff;
+    .carname{
+        font-weight: 600;
+    }
+
+    .features{
+        color: #807b7b;
+        font-weight: 600;
+        margin-top: 1%;
+    }
+}
+
+.capacity{
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    margin-top: -4%;
+}
+
+.groups{
+    font-size: 20px;
+    margin-right: 5px;
+    margin-top: 4px;
+    color: #807b7b;
+}
+
+.electricCar{
+    font-size: 20px;
+    margin-top: 10px;
+    margin-left: 20px;
+    color: #807b7b;
+}
+
+.carCapacity{
+    font-weight: 900;
+}
+
+.carType{
+    font-weight: 900;
+}
+
+.mileagecap{
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    margin-top: -0.5%;
+}
+
+.mileage{
+    font-size: 20px;
+    margin-right: 5px;
+    margin-top: 4px;
+    color: #807b7b;
+}
+
+.cap{
+    font-weight: 900;
+}
+
+
+//------------CONTENT-2---------------
+
+.content2{
+    border-top: 1px solid black;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #ffffff;
+}
+
+.carPrice{
+    margin-left: 10%;
+}
+
+.price{
+    color: black;
+    font-weight: 900;
+}
+
+.label{
+    color: #807b7b;
+    font-weight: 600;
+}
+
+.bookbtn{
+    font-weight: 800;
+    margin-top: -7%;
+    background-color: rgb(160, 7, 7);
+}
+
+.book{
+    margin-left: 30%;
+}
