@@ -11,7 +11,7 @@ import { SideNavigationBarComponent } from './side-navigation-bar/side-navigatio
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
-import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { initializeApp, provideFirebaseApp} from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
