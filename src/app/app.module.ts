@@ -11,8 +11,8 @@ import { SideNavigationBarComponent } from './side-navigation-bar/side-navigatio
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
-// import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
-// import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
@@ -24,17 +24,13 @@ import { SearchComponent } from './search/search.component';
 import { UserpageComponent } from './userpage/userpage.component';
 import { RentedCarPageComponent } from './rented-car-page/rented-car-page.component';
 import { CarPageComponent } from './car-page/car-page.component';
-import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
-import { getFirestore, provideFirestore } from '@angular/fire/firestore';
-
-const firebaseConfig = {
-  apiKey: "AIzaSyABE3NZNOp5EsGAr18A7NBGhlUIjTKfHuo",
-  authDomain: "rentanddrive-angular-1e5ec.firebaseapp.com",
-  projectId: "rentanddrive-angular-1e5ec",
-  storageBucket: "rentanddrive-angular-1e5ec.appspot.com",
-  messagingSenderId: "692514391678",
-  appId: "1:692514391678:web:2b5bc35e2834dd51293a2f"
-};
+import { AdminSidebarComponent } from './admin-sidebar/admin-sidebar.component';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { getStorage, provideStorage } from '@angular/fire/storage';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AdminVehicleManagementComponent } from './admin-vehicle-management/admin-vehicle-management.component';
+import { AdminBookingTransactionsComponent } from './admin-booking-transactions/admin-booking-transactions.component';
+import { UserRentedVehiclesComponent } from './user-rented-vehicles/user-rented-vehicles.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +48,10 @@ const firebaseConfig = {
     UserpageComponent,
     RentedCarPageComponent,
     CarPageComponent,
+    AdminSidebarComponent,
+    AdminVehicleManagementComponent,
+    AdminBookingTransactionsComponent,
+    UserRentedVehiclesComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,8 +71,9 @@ const firebaseConfig = {
     FormsModule,
     ReactiveFormsModule,
     AngularFireAuthModule,
-    provideFirebaseApp(() => initializeApp(firebaseConfig)),
-    provideFirestore(() => getFirestore()),
+    AngularFireModule,
+    provideAuth(() => getAuth()),
+    provideStorage(() => getStorage()),
   ],
   providers: [
     { provide: FIREBASE_OPTIONS, useValue: {
@@ -82,7 +83,7 @@ const firebaseConfig = {
       storageBucket: "rentanddrive-angular-1e5ec.appspot.com",
       messagingSenderId: "692514391678",
       appId: "1:692514391678:web:49be852647a85d1d293a2f"
-    }}
+    }},
   ],
   bootstrap: [AppComponent]
 })
