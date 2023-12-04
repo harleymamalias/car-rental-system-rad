@@ -30,7 +30,6 @@ import { getStorage, provideStorage } from '@angular/fire/storage';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AdminVehicleManagementComponent } from './admin-vehicle-management/admin-vehicle-management.component';
 import { AdminBookingTransactionsComponent } from './admin-booking-transactions/admin-booking-transactions.component';
-import { UserRentedVehiclesComponent } from './user-rented-vehicles/user-rented-vehicles.component';
 
 @NgModule({
   declarations: [
@@ -50,8 +49,7 @@ import { UserRentedVehiclesComponent } from './user-rented-vehicles/user-rented-
     CarPageComponent,
     AdminSidebarComponent,
     AdminVehicleManagementComponent,
-    AdminBookingTransactionsComponent,
-    UserRentedVehiclesComponent,
+    AdminBookingTransactionsComponent
   ],
   imports: [
     BrowserModule,
