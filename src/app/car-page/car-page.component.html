@@ -39,17 +39,17 @@
             <div class="container grandchild-1">
 
                 <div class="name">
-                    {{car.carName}}
+                    {{car.make}}{{car.model}}{{car.year}}
                 </div>
 
                 <div class="image">
-                    <img [src]="car.imageUrl" alt="Image"/>
+                    <img src="{{car.carImages}}" alt="Image"/>
                 </div>
         
                 <div class="details">                            
         
                     <div class="capacity">
-                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="groups" class="groups capacityIcon"></mat-icon><span class="capacityTxt"><strong>Capacity: </strong> </span>{{car.capacity}}
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="groups" class="groups capacityIcon"></mat-icon><span class="capacityTxt"><strong>Capacity: </strong> </span>{{car.seatCapacity}}
                     </div>
         
                     <div class="type">
@@ -57,7 +57,7 @@
                     </div>
         
                     <div class="cap">
-                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="gas_meter" class="mileage"></mat-icon><span class="mileageTxt"><strong>Mileage Cap: </strong></span>{{car.mileageCap}}
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="gas_meter" class="mileage"></mat-icon><span class="mileageTxt"><strong>Mileage Cap: </strong></span>{{car.fuelType}}
                     </div>
         
                     <div class="price">

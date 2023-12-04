@@ -11,6 +11,7 @@ interface CarDetails {
   model: string;
   seatCapacity: number;
   year: number;
+  price: number;
   carImages: File[];
 }
 
@@ -33,12 +34,14 @@ export class AddCarDetailsComponent implements OnInit {
 
   initForm(): void {
     this.carForm = this.fb.group({
+      id: ['', Validators.required],
       make: ['', Validators.required],
       carType: ['', Validators.required],
       fuelType: ['', Validators.required],
       model: ['', Validators.required],
       seatCapacity: [0, Validators.required],
       year: [2000, [Validators.required, Validators.min(2000), Validators.max(2023)]],
+      price: ['', Validators.required],
       carImages: [[]]
     });
   }
@@ -46,12 +49,14 @@ export class AddCarDetailsComponent implements OnInit {
   onSubmit(): void {
     if (this.carForm.valid) {
       const newCar: CarDetails = {
+        id: this.carForm.value.id,
         make: this.carForm.value.make,
         carType: this.carForm.value.carType,
         fuelType: this.carForm.value.fuelType,
         model: this.carForm.value.model,
         seatCapacity: this.carForm.value.seatCapacity,
         year: this.carForm.value.year,
+        price: this.carForm.value.price,
         carImages: this.carForm.value.carImages
       };
 

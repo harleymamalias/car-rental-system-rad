@@ -1,10 +1,20 @@
 export class Car{
-    imageUrl!:String
-    carName!:String;
-    capacity!:Number;
+    // imageUrl!:String
+    // carName!:String;
+    // capacity!:Number;
+    // carType!:String;
+    // mileageCap!:String;
+    // price!:Number;
+    // tags?:string[];
+    // id!:number;
+
+    make!:String;
     carType!:String;
-    mileageCap!:String;
+    fuelType!:String;
+    model!:String;
+    seatCapacity!:Number;
+    year!:Number;
     price!:Number;
-    tags?:string[];
+    carImages!:String;
     id!:number;
 }

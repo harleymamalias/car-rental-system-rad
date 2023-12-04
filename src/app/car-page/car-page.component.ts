@@ -14,7 +14,16 @@ export class CarPageComponent implements OnInit{
   constructor(private activatedRoute:ActivatedRoute, private carService:CarService){
     activatedRoute.params.subscribe((params)=>{
       if(params['id'])
-      this.car = carService.getCarById(params['id']);
+      this.carService.getCarById(params['id']).subscribe(
+        car => {
+          if (car) {
+            this.car = car;
+          } else {
+            console.log('carpage error');
+          }
+        }
+      );
+
     })
   }
   ngOnInit(): void {

@@ -24,24 +24,24 @@
                     <a routerLink="/car/{{car.id}}">
                         <div class="imageUrl">
                             <button type="button" class="btn btn-danger compactbtn">Compact</button>
-                            <img src="{{car.imageUrl}}" alt="" class="image1">
+                            <img src="{{car.carImages}}" alt="" class="image1">
                         </div>
                         
                         <div class="content1">
                             <div class="carname">
-                                {{car.carName}}
+                                {{car.make}}{{car.model}}{{car.year}}
                             </div>
 
                             <p class="features">Features</p>
 
                             <div class="capacity">
-                                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="groups" class="groups"></mat-icon><span class="carCapacity">{{car.capacity}}</span>
+                                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="groups" class="groups"></mat-icon><span class="carCapacity">{{car.seatCapacity}}</span>
                                 
                                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="electric_car" class="electricCar"></mat-icon><span class="carType">{{car.carType}} </span>                               
                             </div>
                             
                             <div class="mileagecap">
-                                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="gas_meter" class="mileage"></mat-icon><span class="cap">{{car.mileageCap}}</span>
+                                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="gas_meter" class="mileage"></mat-icon><span class="cap">{{car.fuelType}}</span>
                             </div>
                         </div>
 

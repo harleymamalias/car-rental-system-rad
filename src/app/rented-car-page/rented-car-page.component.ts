@@ -14,6 +14,13 @@ export class RentedCarPageComponent {
   }
 
   ngOnInit(): void{
-  this.cars = this.carService.getAll();
-  }
+    this.carService.getAll().subscribe(
+      cars => {
+        this.cars = cars;
+      },
+      error => {
+        console.log("error rented car");
+      }
+    );
+    }
 }

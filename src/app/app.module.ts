@@ -11,21 +11,18 @@ import { SideNavigationBarComponent } from './side-navigation-bar/side-navigatio
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
-// import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
-// import { getFirestore, provideFirestore } from '@angular/fire/firestore';
-import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireModule } from '@angular/fire/compat';  // Import AngularFireModule
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';  // Import AngularFirestoreModule
 import { AddCarDetailsComponent } from './add-car-details/add-car-details.component';
-import { UserSideBarComponent } from './user-side-bar/user-side-bar.component';
-import { TagsComponent } from './tags/tags.component';
-import { SearchComponent } from './search/search.component';
-import { UserpageComponent } from './userpage/userpage.component';
-import { RentedCarPageComponent } from './rented-car-page/rented-car-page.component';
 import { CarPageComponent } from './car-page/car-page.component';
-import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
-import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { RentedCarPageComponent } from './rented-car-page/rented-car-page.component';
+import { SearchComponent } from './search/search.component';
+import { TagsComponent } from './tags/tags.component';
+import { UserSideBarComponent } from './user-side-bar/user-side-bar.component';
+import { UserpageComponent } from './userpage/userpage.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyABE3NZNOp5EsGAr18A7NBGhlUIjTKfHuo",
@@ -59,31 +56,15 @@ const firebaseConfig = {
     NgbModule,
     BrowserAnimationsModule,
     MatIconModule,
-    provideFirebaseApp(() => initializeApp({
-      apiKey: "AIzaSyABE3NZNOp5EsGAr18A7NBGhlUIjTKfHuo",
-      authDomain: "rentanddrive-angular-1e5ec.firebaseapp.com",
-      projectId: "rentanddrive-angular-1e5ec",
-      storageBucket: "rentanddrive-angular-1e5ec.appspot.com",
-      messagingSenderId: "692514391678",
-      appId: "1:692514391678:web:49be852647a85d1d293a2f"})),
-    provideFirestore(() => getFirestore()),
-    provideDatabase(() => getDatabase()),
     FormsModule,
     ReactiveFormsModule,
     AngularFireAuthModule,
-    provideFirebaseApp(() => initializeApp(firebaseConfig)),
-    provideFirestore(() => getFirestore()),
+    AngularFireModule.initializeApp(firebaseConfig),  // Initialize AngularFire with the config
+    AngularFirestoreModule,  // Add AngularFirestoreModule
   ],
-  providers: [
-    { provide: FIREBASE_OPTIONS, useValue: {
-      apiKey: "AIzaSyABE3NZNOp5EsGAr18A7NBGhlUIjTKfHuo",
-      authDomain: "rentanddrive-angular-1e5ec.firebaseapp.com",
-      projectId: "rentanddrive-angular-1e5ec",
-      storageBucket: "rentanddrive-angular-1e5ec.appspot.com",
-      messagingSenderId: "692514391678",
-      appId: "1:692514391678:web:49be852647a85d1d293a2f"
-    }}
-  ],
+  // providers: [
+  //   { provide: FIREBASE_OPTIONS, useValue: firebaseConfig }
+  // ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

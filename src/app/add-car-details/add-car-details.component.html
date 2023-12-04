@@ -7,6 +7,12 @@
         <div class="row mb-3">
           <div class="col-md-4 mt-3">
             <div class="form-group">
+              <label for="validationCustom01">ID</label>
+              <input type="text" class="form-control" id="validationCustom01" placeholder="" formControlName="id" required>
+            </div>
+          </div>
+          <div class="col-md-4 mt-3">
+            <div class="form-group">
               <label for="validationCustom01">Make</label>
               <input type="text" class="form-control" id="validationCustom01" placeholder="" formControlName="make" required>
             </div>
@@ -57,7 +63,7 @@
           <div class="col-md-4">
             <div class="form-group">
               <label for="validationCustom01">Booking Price</label>
-              <input type="number" class="form-control" id="validationCustom01" placeholder="" formControlName="price" min="2000" max="2023" required>
+              <input type="number" class="form-control" id="validationCustom01" placeholder="" formControlName="price" required>
             </div>
           </div>
           
@@ -78,7 +84,7 @@
       <br>
       <ul>
         <li *ngFor="let cars of carDetails$ | async">
-          {{ cars.make }} - {{ cars.model }} - {{ cars.fuelType }}
+          {{cars.id}} - {{ cars.make }} - {{ cars.model }} - {{ cars.fuelType }} - {{cars.carImages}}
           <button (click)="deleteItem(cars.id)">Delete</button>
         </li>
       </ul>      
