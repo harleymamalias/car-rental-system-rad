@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CarRentalDetailsService } from '../car-rental-details.service';
 
 interface Car {
-  id: number;
-  name: string;
-  category: string;
-  rentalFee: number;
-  capacity: number;
+  id: string;
+  make: string;
+  carType: string;
+  bookingPrice: number;
+  seatCapacity: number;
   fuelType: string;
 }
 
@@ -14,21 +15,25 @@ interface Car {
   templateUrl: './admin-vehicle-management.component.html',
   styleUrls: ['./admin-vehicle-management.component.scss']
 })
+export class AdminVehicleManagementComponent implements OnInit {
 
-export class AdminVehicleManagementComponent {
+  cars: Car[] = [];
 
-  
+  constructor(private carService: CarRentalDetailsService) {}
 
-  cars: Car[] = [
-    { id: 1, name: 'Car 1', category: 'Sedan', rentalFee: 50, capacity: 4, fuelType: 'Petrol' },
-    { id: 2, name: 'Car 2', category: 'SUV', rentalFee: 70, capacity: 7, fuelType: 'Diesel' },
-  ];
-
-  editCar(carId: number): void {
-    console.log('Edit car with ID:', carId);
+  ngOnInit(): void {
+    // Fetch data from the service when the component is initialized
+    this.carService.getCarRentalDetails()
+      .subscribe((carDetails: Car[]) => {
+        this.cars = carDetails;
+      });
   }
 
-  deleteCar(carId: number): void {
-    console.log('Delete car with ID:', carId);
+  editCar(make: string): void {
+    console.log('Edit car with ID:', make);
+  }
+
+  deleteCar(make: string): void {
+    console.log('Delete car with ID:', make);
   }
 }

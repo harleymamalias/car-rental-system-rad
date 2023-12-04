@@ -49,10 +49,24 @@
         <div class="row mb-3">
           <div class="col-md-4 mt-3">
             <div class="form-group">
+              <label for="validationCustom01">Car ID</label>
+              <input type="number" class="form-control" id="validationCustom01" placeholder="" formControlName="id" required>
+            </div>
+          </div>
+          <div class="col-md-4 mt-3">
+            <div class="form-group">
               <label for="validationCustom01">Make</label>
               <input type="text" class="form-control" id="validationCustom01" placeholder="" formControlName="make" required>
             </div>
           </div>
+          <div class="col-md-4 mt-3">
+            <div class="form-group">
+              <label for="validationCustom01">Model</label>
+              <input type="text" class="form-control" id="validationCustom01" placeholder="" formControlName="model" required>
+            </div>
+          </div>           
+        </div> 
+        <div class="row mb-3">
           <div class="col-md-4 mt-3">
             <div class="form-group w-100">
               <label for="carType">Car Type</label>
@@ -62,7 +76,7 @@
                 <option value="Manual Transmission">Manual Transmission</option>
               </select>
             </div>
-          </div>
+          </div> 
           <div class="col-md-4 mt-3">
             <div class="form-group w-100">
               <label for="fuelType">Fuel Type</label>
@@ -73,15 +87,8 @@
               </select>
             </div>
           </div>
-        </div> 
-        <div class="row mb-3">
-          <div class="col-md-4">
-            <div class="form-group">
-              <label for="validationCustom01">Model</label>
-              <input type="text" class="form-control" id="validationCustom01" placeholder="" formControlName="model" required>
-            </div>
-          </div>
-          <div class="col-md-4">
+          
+          <div class="col-md-4 mt-3">
             <div class="form-group">
               <label for="validationCustom01">Seat Capacity</label>
               <input type="number" class="form-control" id="validationCustom01" placeholder="" formControlName="seatCapacity" required>
@@ -101,29 +108,26 @@
               <label for="validationCustom01">Booking Price</label>
               <input type="number" class="form-control" id="validationCustom01" placeholder="" formControlName="bookingPrice" required>
             </div>
-          </div>
-          
+          </div>       
         </div>
-  
         <div class="row mb-3">
           <div class="col-md-4">
             <div class="form-group">
               <label for="formFileSingle" class="form-label">Car Image</label>
-              <input class="form-control" type="file" id="formFileSingle" formControlName="carImage">
+              <input class="form-control" type="file" id="formFileSingle" formControlName="carImages">
             </div>
           </div>
-          <!-- Add other fields as needed -->
         </div>
         
         <button type="submit" class="btn btn-primary">Add Car Details</button>
       </form>
       <br>
       <ul>
-        <li *ngFor="let cars of carDetails$ | async">
-          {{ cars.make }} - {{ cars.model }} - {{ cars.fuelType }}
-          <button (click)="deleteItem(cars.id)">Delete</button>
+        <li *ngFor="let car of carDetails$ | async">
+          {{ car.make }} - {{ car.model }} - {{ car.fuelType }}
+          <button (click)="deleteItem(car.id)">Delete</button>
         </li>
-      </ul>      
+      </ul>              
     </div>
     <br>
   </div>

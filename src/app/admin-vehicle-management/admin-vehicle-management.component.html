@@ -67,18 +67,17 @@
               <tbody>
                 <tr *ngFor="let car of cars">
                   <td>{{ car.id }}</td>
-                  <td>{{ car.name }}</td>
-                  <td>{{ car.category }}</td>
-                  <td>{{ car.rentalFee }}</td>
-                  <td>{{ car.capacity }}</td>
+                  <td>{{ car.make }}</td>
+                  <td>{{ car.carType }}</td>
+                  <td>{{ car.bookingPrice }}</td>
+                  <td>{{ car.seatCapacity }}</td>
                   <td>{{ car.fuelType }}</td>
                   <td>
-                    <!-- Add action buttons here, e.g., Edit and Delete -->
-                    <button class="btn btn-primary" (click)="editCar(car.id)">Edit</button>
-                    <button class="btn btn-danger" (click)="deleteCar(car.id)">Delete</button>
+                    <button class="btn btn-primary" (click)="editCar(car.make)">Edit</button>
+                    <button class="btn btn-danger" (click)="deleteCar(car.make)">Delete</button>
                   </td>
                 </tr>
-              </tbody>
+              </tbody>              
             </table>
           </div>
         </div>
