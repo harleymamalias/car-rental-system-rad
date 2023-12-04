@@ -11,6 +11,7 @@ interface CarDetails {
   model: string;
   seatCapacity: number;
   year: number;
+  bookingPrice: number,
   carImages: File[];
 }
 
@@ -39,6 +40,7 @@ export class AddCarDetailsComponent implements OnInit {
       model: ['', Validators.required],
       seatCapacity: [0, Validators.required],
       year: [2000, [Validators.required, Validators.min(2000), Validators.max(2023)]],
+      bookingPrice: ['', Validators.required],
       carImages: [[]]
     });
   }
@@ -52,6 +54,7 @@ export class AddCarDetailsComponent implements OnInit {
         model: this.carForm.value.model,
         seatCapacity: this.carForm.value.seatCapacity,
         year: this.carForm.value.year,
+        bookingPrice: this.carForm.value.bookingPrice,
         carImages: this.carForm.value.carImages
       };
 

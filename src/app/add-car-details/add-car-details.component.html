@@ -1,6 +1,48 @@
 <!-- add-car-details.component.html -->
+<div class="wrapper">
+  <!-- Sidebar  -->
+  <app-admin-sidebar></app-admin-sidebar>
+  <!-- Page Content  -->
+  <div id="content">
 
-<div class="add-car-details-container mt-5">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <button type="button" id="sidebarCollapse" class="btn btn-info">
+          <i class="fas fa-align-left"></i>
+          <i class="bi bi-menu-app"></i>
+        </button>
+        <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <i class="bi bi-list"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">
+                <i class="bi bi-file-earmark"></i> Page
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="bi bi-file-earmark"></i> Page
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="bi bi-file-earmark"></i> Page
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="bi bi-file-earmark"></i> Page
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  <div class="add-car-details-container mt-5">
     <div class="container">
       <h2>ADD A NEW VEHICLE</h2>
       <form [formGroup]="carForm" (ngSubmit)="onSubmit()">
@@ -57,7 +99,7 @@
           <div class="col-md-4">
             <div class="form-group">
               <label for="validationCustom01">Booking Price</label>
-              <input type="number" class="form-control" id="validationCustom01" placeholder="" formControlName="price" min="2000" max="2023" required>
+              <input type="number" class="form-control" id="validationCustom01" placeholder="" formControlName="bookingPrice" required>
             </div>
           </div>
           
@@ -66,8 +108,8 @@
         <div class="row mb-3">
           <div class="col-md-4">
             <div class="form-group">
-              <label for="formFileMultiple" class="form-label">Car Images</label>
-              <input class="form-control" type="file" id="formFileMultiple" multiple formControlName="carImages">
+              <label for="formFileSingle" class="form-label">Car Image</label>
+              <input class="form-control" type="file" id="formFileSingle" formControlName="carImage">
             </div>
           </div>
           <!-- Add other fields as needed -->
@@ -83,5 +125,19 @@
         </li>
       </ul>      
     </div>
+    <br>
   </div>
+    <br><br><br><br>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var sidebarCollapse = document.getElementById('sidebarCollapse');
+    sidebarCollapse.addEventListener('click', function () {
+      var sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('active');
+    });
+  });
+</script>
+
   
