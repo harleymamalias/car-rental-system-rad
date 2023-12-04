@@ -18,6 +18,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AddCarDetailsComponent } from './add-car-details/add-car-details.component';
+import { UserSideBarComponent } from './user-side-bar/user-side-bar.component';
+import { TagsComponent } from './tags/tags.component';
+import { SearchComponent } from './search/search.component';
+import { UserpageComponent } from './userpage/userpage.component';
+import { RentedCarPageComponent } from './rented-car-page/rented-car-page.component';
+import { CarPageComponent } from './car-page/car-page.component';
+import { AdminSidebarComponent } from './admin-sidebar/admin-sidebar.component';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { getStorage, provideStorage } from '@angular/fire/storage';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AdminVehicleManagementComponent } from './admin-vehicle-management/admin-vehicle-management.component';
+import { AdminBookingTransactionsComponent } from './admin-booking-transactions/admin-booking-transactions.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +40,16 @@ import { AddCarDetailsComponent } from './add-car-details/add-car-details.compon
     RegistrationPageComponent,
     SideNavigationBarComponent,
     AdminDashboardComponent,
-    AddCarDetailsComponent
+    AddCarDetailsComponent,
+    UserSideBarComponent,
+    TagsComponent,
+    SearchComponent,
+    UserpageComponent,
+    RentedCarPageComponent,
+    CarPageComponent,
+    AdminSidebarComponent,
+    AdminVehicleManagementComponent,
+    AdminBookingTransactionsComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +69,9 @@ import { AddCarDetailsComponent } from './add-car-details/add-car-details.compon
     FormsModule,
     ReactiveFormsModule,
     AngularFireAuthModule,
+    AngularFireModule,
+    provideAuth(() => getAuth()),
+    provideStorage(() => getStorage()),
   ],
   providers: [
     { provide: FIREBASE_OPTIONS, useValue: {
@@ -57,7 +81,7 @@ import { AddCarDetailsComponent } from './add-car-details/add-car-details.compon
       storageBucket: "rentanddrive-angular-1e5ec.appspot.com",
       messagingSenderId: "692514391678",
       appId: "1:692514391678:web:49be852647a85d1d293a2f"
-    }}
+    }},
   ],
   bootstrap: [AppComponent]
 })

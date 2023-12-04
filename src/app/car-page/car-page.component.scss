@@ -1,0 +1,263 @@
+.parentContainer{
+    display: flex !important;
+    flex-wrap: wrap;
+    flex-direction: row !important;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(250, 243, 243);
+}
+
+
+//---------------CHILD-1-----------//
+.child-1{
+    width: 250px;
+    margin-left: 0;
+    height: 100vh;
+    background-color: #ffffff;
+    color: black;
+    box-shadow: 5px 0 10px rgb(151, 147, 147);
+    padding: 0;
+    border-right: 1px solid rgba(0, 0, 0, 0.267);
+}
+
+.navbtn{
+    color: black;
+    border: none;
+    width: 228px;
+    height: 50px; 
+    text-align: start; 
+    justify-content: flex-start; 
+    padding-top: 14px;  
+    background-color: white;
+    border-radius: 10px !important;
+    margin-top: 7%;
+    display: flex; 
+}
+
+.navbtn:hover{
+    color: white;
+    background-color: rgb(173, 167, 167);
+}
+
+.active{
+    color: white;
+    background-color: rgb(160, 7, 7);
+}
+
+.btn-nav{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.btn-sign-out{
+    margin-top: 175% !important;
+}
+
+.iconSize{
+    font-size: 20px;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+
+//---------------CHILD-2-----------//
+.child-2{
+    flex: 1;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+
+//---------------SUBCHILD-1-----------//
+.subchild-1{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 3%;
+}
+
+a{
+    text-decoration: none;
+}
+
+.backbtn{
+    cursor: pointer;
+    margin-top: 0.2%;
+    margin-left: 0.5%;
+    font-weight: bold;
+}
+
+.btn-menu{
+    width: 33px;
+    height: 30px;
+    margin-left: 1.5%;
+}
+    
+.btn-alarm{
+    width: 35px;
+    height: 30px;
+    margin-left: 74.5%;
+}
+    
+.btn-user{
+    width: 38px;
+    height: 30px;
+    margin-left: 1%;
+}
+    
+.user-info{
+    height: 43px;
+    width: 60px;
+    margin-left: 1%;
+}
+    
+.user-name{
+    font-weight: 700;
+    text-decoration: none;
+    color: black;
+}
+    
+.user-type{
+    text-decoration: none;
+    color: black;
+}
+    
+.btn-arrow{
+    width: 27px;
+    height: 30px;
+    margin-left: 1%;
+}
+
+
+//---------------SUBCHILD-2-----------//
+
+
+
+
+//---------------GRANDCHILD-1-----------//
+.grandchild-1{
+    background-color: white;
+    margin-top: 3%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border: 1px solid rgb(68, 66, 66);
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgb(151, 147, 147);
+}
+
+.name{
+    text-align: center;
+    margin-top: 1%;
+    font-weight: 900;
+    font-size: 18px;
+    border: 2px solid rgb(90, 85, 85);
+    padding-top: 8px;
+    background-color: rgb(160, 7, 7);
+    color: white;
+    height: 40px;
+}
+
+.image{
+    text-align: center;
+    padding: 60px;
+    background-color: #D9D9D9;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.details{
+    padding-left: 5%;
+    padding: 5%;
+    margin-top: 5%;
+    border: 1px solid black;
+}
+
+.capacity{
+    display: flex;
+}
+
+.capacityIcon{
+    font-size: 20px;
+}
+
+.capacityTxt{
+    margin-right: 5px;
+}
+
+.type{
+    padding-top: 2%;
+    display: flex; 
+}
+
+.electricCar{
+    font-size: 20px;
+}
+
+.typeTxt{
+    margin-right: 5px;
+}
+
+.cap{
+    padding-top: 2%;
+    display: flex; 
+}
+
+.mileage{
+    font-size: 20px;
+}
+
+.mileageTxt{
+    margin-right: 5px;
+}
+
+.price{
+    padding-top: 2%;
+    display: flex;
+}
+
+.rentIcon{
+    font-size: 20px;
+}
+
+.priceTxt{
+    margin-right: 5px;
+}
+
+
+//---------------GRANDCHILD-2-----------//
+.grandchild-2{
+    background-color: red;
+    margin-left: 2%;
+    margin-top: 3%;
+    border: 1px solid rgb(68, 66, 66);
+    border-radius: 10px;
+    background-color: white;
+    padding-bottom: 2%;
+    font-size: 14px;
+    box-shadow: 0px 0px 5px rgb(151, 147, 147);
+}
+
+.form-control{
+    font-size: 14px;
+}
+
+h4{
+    font-weight: 600;
+}
+
+.bookbtn{
+    background-color: rgb(160, 7, 7);
+    color: white;
+    border: none;
+}
+
+.bookbtn:hover{
+    color: white;
+    border: none;
+    background-color: rgb(173, 167, 167);
+}
