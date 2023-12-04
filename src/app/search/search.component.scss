@@ -1,0 +1,86 @@
+.container{
+    margin-top: 3%;
+    margin-left: 3%;
+    display: flex;
+    
+}
+
+.searchField{
+    width: 20rem;
+    height: 2.5rem;
+    border-radius: 10rem 0 0 10rem;
+    border: none;
+    padding-left: 2rem;
+    background-color: white;
+    outline: none;
+    margin-left: 26.8%;
+}
+
+.navbtn{
+    display: flex;
+    color: white;
+    border: none;
+    text-align: start;
+    align-items: center;   
+    background-color: rgb(160, 7, 7);
+    border-radius: 0 10rem 10rem 0;
+    font-size: 15px;
+    height: 2.5rem;
+    width: 98px;
+    outline: none;
+}
+
+.navbtn:hover{
+    color: black;
+    background-color: rgb(201, 191, 191);
+}
+
+.iconSize{
+    font-size: 20px;
+    text-align: center;
+}
+
+.btn-menu{
+    width: 30px;
+    height: 30px;
+    margin-top: 0.2%;
+}
+
+.btn-alarm{
+    width: 32px;
+    height: 30px;
+    margin-top: 0.2%;
+    margin-left: 15.5%;
+}
+
+.btn-user{
+    width: 35px;
+    height: 30px;
+    margin-top: 0.2%;
+    margin-left: 0.5%;
+}
+
+.user-info{
+    height: 40px;
+    width: 60px;
+    margin-top: 0.2%;
+    margin-left: 0.5%;
+}
+
+.user-name{
+    font-weight: 700;
+    text-decoration: none;
+    color: black;
+}
+
+.user-type{
+    text-decoration: none;
+    color: black;
+}
+
+.btn-arrow{
+    width: 24px;
+    height: 30px;
+    margin-top: 0.4%;
+    margin-left: 1%;
+}
