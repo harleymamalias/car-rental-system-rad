@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { CarRentalDetailsService } from '../car-rental-details.service';
 
 interface Car {
-  id: string;
+  id: number;
   make: string;
+  model: string;
   carType: string;
   bookingPrice: number;
   seatCapacity: number;
@@ -22,7 +23,6 @@ export class AdminVehicleManagementComponent implements OnInit {
   constructor(private carService: CarRentalDetailsService) {}
 
   ngOnInit(): void {
-    // Fetch data from the service when the component is initialized
     this.carService.getCarRentalDetails()
       .subscribe((carDetails: Car[]) => {
         this.cars = carDetails;
@@ -33,7 +33,13 @@ export class AdminVehicleManagementComponent implements OnInit {
     console.log('Edit car with ID:', make);
   }
 
-  deleteCar(make: string): void {
-    console.log('Delete car with ID:', make);
-  }
+  // deleteCar(id: number): void {
+  //   this.carService.deleteCarRentalDetail(id)
+  //     .then(() => {
+  //       console.log('Car deleted successfully');
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error deleting car:', error);
+  //     });
+  // }
 }
