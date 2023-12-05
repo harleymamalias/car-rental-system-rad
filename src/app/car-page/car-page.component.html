@@ -1,3 +1,4 @@
+<!-- <pre>{{ car | json }}</pre> -->
 <div class="container-fluid parentContainer">
     <div class="container child-1">
 
@@ -38,29 +39,29 @@
 
             <div class="container grandchild-1">
 
-                <div class="name">
-                    {{car?.make}}{{car?.model}}{{car?.year}}
+                <div class="name" *ngIf="car">
+                    {{car.make}}{{car.model}}{{car.year}}
                 </div>
 
-                <div class="image">
+                <div class="image" *ngIf="car">
                     <img src="{{car.carImages}}" alt="Image"/>
                 </div>
         
-                <div class="details">                            
+                <div class="details" *ngIf="car">                            
         
-                    <div class="capacity">
+                    <div class="capacity">  
                         <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="groups" class="groups capacityIcon"></mat-icon><span class="capacityTxt"><strong>Capacity: </strong> </span>{{car.seatCapacity}}
                     </div>
         
-                    <div class="type">
+                    <div class="type" *ngIf="car">
                         <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="electric_car" class="electricCar"></mat-icon><span class="typeTxt"><strong>Car Type: </strong></span>{{car.carType}}
                     </div>
         
-                    <div class="cap">
+                    <div class="cap" *ngIf="car">
                         <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="gas_meter" class="mileage"></mat-icon><span class="mileageTxt"><strong>Mileage Cap: </strong></span>{{car.fuelType}}
                     </div>
         
-                    <div class="price">
+                    <div class="price" *ngIf="car">
                         <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="car_rental" class="rentIcon"></mat-icon><span class="priceTxt"><strong>Price[24 hours]: </strong></span>₱{{car.bookingPrice}}
                     </div>
         
@@ -72,17 +73,22 @@
 
                 <div class="container mt-4">
 
-                    <form>
+                    <form (ngSubmit)="onSubmit()">
                         <div class="row">
                             <div class="col-md-6">
                                 <h4>Booking Details</h4>
 
+                                <!-- <div class="form-group mb-1" *ngIf="car">
+                                    <label for="carName">Car Name</label>
+                                    <input type="text" class="form-control" id="carName" value="{{car.make}}-{{car.model}}-{{car.year}}" [(ngModel)]="formData.carName" [ngModelOptions]="{standalone: true}" required>
+                                </div> -->
+
                                 <div class="form-group mb-1">
-                                    <label for="pickupLocation">Car Name</label>
-                                    <input type="text" class="form-control" id="pickupLocation" value="{{car.make}}{{car.model}}{{car.year}}" formControlName="carName" required>
+                                    <label for="numDays">Number of Days</label>
+                                    <input type="number" class="form-control" id="numDays" [(ngModel)]="formData.numDays" name="numDays"  required>
                                 </div>
         
-                                <div class="form-group mb-1">
+                                <!-- <div class="form-group mb-1">
                                     <label for="fromDate">From Date</label>
                                     <input type="date" class="form-control" id="fromDate" formControlName="fromDate" required>
                                 </div>
@@ -90,26 +96,26 @@
                                 <div class="form-group mb-1">
                                     <label for="toDate">To Date</label>
                                     <input type="date" class="form-control" id="toDate" formControlName="toDate" required>
-                                </div>
+                                </div> -->
         
                                 <div class="form-group mb-1">
                                     <label for="pickupLocation">Pick Up Location</label>
-                                    <input type="text" class="form-control" id="pickupLocation" formControlName="location" required>
+                                    <input type="text" class="form-control" id="pickupLocation" [(ngModel)]="formData.pickupLocation" name="pickupLocation"  required>
                                 </div>
         
                                 <div class="form-group mb-1">
                                     <label for="message">Message (Optional)</label>
-                                    <textarea class="form-control" id="message" rows="3" formControlName="message"></textarea>
+                                    <textarea class="form-control" id="message" rows="3" [(ngModel)]="formData.message" name="message" ></textarea>
                                 </div>
         
-                                <div class="form-group mb-1">
+                                <!-- <div class="form-group mb-1" *ngIf="car">
                                     <label for="price">Price</label>
-                                    <input type="number" class="form-control" id="price" formControlName="price" required>
-                                </div>
+                                    <input type="number" class="form-control" [value]="car.bookingPrice" id="price" [(ngModel)]="formData.price" name="price"  required>
+                                </div> -->
         
                                 <div class="form-group mb-1">
                                     <label for="bookingMoney">Booking Money</label>
-                                    <input type="number" class="form-control" id="bookingMoney" placeholder="Advance payment" formControlName="initialPayment" required>
+                                    <input type="number" class="form-control" id="bookingMoney" placeholder="Advance payment" [(ngModel)]="formData.bookingMoney" name="bookingMoney"  required>
                                 </div>
         
                             </div>
@@ -119,12 +125,12 @@
                                 <h4>Payment Details</h4>
                                 <div class="form-group mb-1">
                                     <label for="fullName">Full Name</label>
-                                    <input type="text" class="form-control" id="fullName" formControlName="customerName" required>
+                                    <input type="text" class="form-control" id="fullName" [(ngModel)]="formData.fullName" name="fullName"  required>
                                 </div>
         
                                 <div class="form-group mb-1">
                                     <label for="paymentMethod">Payment Method</label>
-                                    <select class="form-control" id="paymentMethod" formControlName="paymentMethod" required>
+                                    <select class="form-control" id="paymentMethod" [(ngModel)]="formData.paymentMethod" name="paymentMethod"  required>
                                         <option value="creditCard">Credit Card</option>
                                         <option value="debitCard">Debit Card</option>
                                         <option value="paypal">PayPal</option>
@@ -133,12 +139,12 @@
         
                                 <div class="form-group mb-1">
                                     <label for="amount">Amount</label>
-                                    <input type="number" class="form-control" id="amount" formControlName="amount" required>
+                                    <input type="number" class="form-control" id="amount" [(ngModel)]="formData.amount" name="amount"  required>
                                 </div>
         
                                 <div class="form-group mb-1">
                                     <label for="dateOfPayment">Date of Payment</label>
-                                    <input type="date" class="form-control" id="dateOfPayment" formControlName="dateOfPayment" required>
+                                    <input type="date" class="form-control" id="dateOfPayment" [(ngModel)]="formData.dateOfPayment" name="dateOfPayment"  required>
                                 </div>
         
                             </div>

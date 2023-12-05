@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Observable, map } from 'rxjs';
+// import { AngularFirestore } from '@angular/fire/firestore';
 
 interface CarDetails {
   id: number;
-  make: string;
+  make: string; 
   carType: string;
   fuelType: string;
   model: string;

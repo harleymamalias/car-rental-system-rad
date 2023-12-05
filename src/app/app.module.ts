@@ -12,7 +12,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
-import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { getFirestore, provideFirestore, FirestoreModule} from '@angular/fire/firestore';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
@@ -52,6 +52,7 @@ import { CarPageComponent } from './car-page/car-page.component';
     FormsModule,
     ReactiveFormsModule,
     AngularFireAuthModule,
+    FirestoreModule,
   ],
   providers: [
     { provide: FIREBASE_OPTIONS, useValue: {
