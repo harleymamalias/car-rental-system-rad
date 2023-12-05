@@ -3,82 +3,46 @@
   <div class="wrapper">
       <!-- Page Content  -->
       <div id="content">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="container-fluid">
-            <button type="button" id="sidebarCollapse" class="btn btn-info">
-              <i class="fas fa-align-left"></i>
-              <i class="bi bi-menu-app"></i>
-            </button>
-            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-              aria-expanded="false" aria-label="Toggle navigation">
-              <i class="bi bi-list"></i>
-            </button>
-    
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="nav navbar-nav ml-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">
-                    <i class="bi bi-file-earmark"></i> Page
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    <i class="bi bi-file-earmark"></i> Page
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    <i class="bi bi-file-earmark"></i> Page
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    <i class="bi bi-file-earmark"></i> Page
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+        <app-admin-navbar></app-admin-navbar>
         <div class="container">
           <div class="row" style="box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;">
             <div class="row row-container justify-content-between">
               <div class="col-auto text-end d-flex justify-content-center align-items-center">
-                <h3 class="d-inline"><strong>Bookings</strong></h3>
-              </div>
-              <div class="col-auto">
-                <a [routerLink]="['/add-car-details']" class="rent"><button type="submit" class="btn btn-danger" routerLinkActive="active"><i class="fas fa-sign-out-alt"></i> Add Car Details</button></a>              
+                <h2 class="d-inline"><strong>CUSTOMER BOOKINGS</strong></h2>
               </div>
             </div>
           </div>
           <div class="col-12">
             <table class="table"
               style="box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;">
-              <thead>
+              <thead class="table-danger">
                 <tr>
                   <th scope="col">Customer Name</th>
-                  <th scope="col">Car Model</th>
+                  <th scope="col">Car ID</th>
+                  <th scope="col">Rented Vehicle</th>
                   <th scope="col">Booking Date</th>
+                  <th scope="col">Rental Duration</th>
+                  <th scope="col">Pick-up Location</th>
+                  <th scope="col">Amount Paid</th>
+                  <th scope="col">Payment Method</th>
+                  <th scope="col">Return Date</th>                  
                   <th scope="col">Status</th>
-                  <th scope="col">Actions</th>
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let car of cars">
-                  <td>{{ car.customerName }}</td>
-                  <td>{{ car.carModel }}</td>
-                  <td>{{ car.bookingDate }}</td>
-                  <td>
-                    <button type="button" [class.btn-success]="car.status" [class.btn-danger]="!car.status">
-                      {{ car.status ? 'Pending' : 'Successful' }}
-                    </button>
-                  </td>
-                  
-                    <!-- Add action buttons here, e.g., Edit and Delete -->
-                    <button class="btn btn-primary" (click)="editCar(car.customerName)">Edit</button>
-                    <button class="btn btn-danger" (click)="deleteCar(car.customerName)">Delete</button>
+                <tr *ngFor="let vehicle of rentedVehicles">
+                  <td>{{ vehicle.fullname }}</td>
+                  <td>{{ vehicle.id }}</td>
+                  <td>{{ vehicle.make }} - {{ vehicle.model }}</td>
+                  <td>{{ vehicle.bookingDate }}</td>
+                  <td>{{ vehicle.numDays }}</td>
+                  <td>{{ vehicle.pickupLocation }}</td>
+                  <td>₱{{ vehicle.amount }}</td>
+                  <td>{{ vehicle.paymentMethod }}</td>
+                  <td>{{ vehicle.returnDate }}</td>
+                  <td>Successful</td>
                 </tr>
-              </tbody>
+              </tbody>              
             </table>
           </div>
         </div>

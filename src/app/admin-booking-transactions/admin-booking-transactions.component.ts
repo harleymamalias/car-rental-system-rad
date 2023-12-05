@@ -1,10 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
-interface Car {
-  customerName: string;
-  carModel: string;
+interface RentedVehicleDetails {
+  amount: number;
+  downPayment: number;
+  dateOfPayment: string;
+  username: string;
+  message: string;
+  numDays: number;
   bookingDate: string;
-  status: string;
+  returnDate: string;
+  pickupLocation: string;
+  fullname: string;
+  make: string;
+  id: string;
+  model: string;
+  paymentMethod: string;
 }
 
 @Component({
@@ -12,19 +23,19 @@ interface Car {
   templateUrl: './admin-booking-transactions.component.html',
   styleUrls: ['./admin-booking-transactions.component.scss']
 })
+export class AdminBookingTransactionsComponent implements OnInit {
 
-export class AdminBookingTransactionsComponent {
+  rentedVehicles: RentedVehicleDetails[] = [];
 
-  cars: Car[] = [
-    { customerName: 'Mexl Tuba', carModel: 'Land Cruiser', bookingDate: '12-06-2023', status: 'Pending' },
-    { customerName: 'Car 2', carModel: 'Rush', bookingDate: '11-10-2023', status: 'Completed' },
-  ];
+  constructor(private firestore: AngularFirestore) { }
 
-  editCar(customerName: string): void {
-    console.log('Edit car with Customer Name:', customerName);
+  ngOnInit(): void {
+    this.getRentedVehicles();
   }
 
-  deleteCar(customerName: string): void {
-    console.log('Delete car with CustomerName:', customerName);
+  getRentedVehicles(): void {
+    this.firestore.collection('rented-vehicles').valueChanges().subscribe((vehicles: unknown[]) => {
+      this.rentedVehicles = vehicles as RentedVehicleDetails[];
+    });
   }
 }
