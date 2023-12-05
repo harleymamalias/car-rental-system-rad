@@ -21,6 +21,8 @@ import { AddCarDetailsComponent } from './add-car-details/add-car-details.compon
 import { UserpageComponent } from './userpage/userpage.component';
 import { CarPageComponent } from './car-page/car-page.component';
 import { RentedCarPageComponent } from './rented-car-page/rented-car-page.component';
+import { SearchComponent } from './search/search.component';
+import { TagsComponent } from './tags/tags.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { RentedCarPageComponent } from './rented-car-page/rented-car-page.compon
     AddCarDetailsComponent,
     UserpageComponent,
     CarPageComponent,
-    RentedCarPageComponent
+    RentedCarPageComponent,
+    SearchComponent,
+    TagsComponent
   ],
   imports: [
     BrowserModule,
