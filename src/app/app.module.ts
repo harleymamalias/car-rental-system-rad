@@ -18,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AddCarDetailsComponent } from './add-car-details/add-car-details.component';
+import { UserpageComponent } from './userpage/userpage.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AddCarDetailsComponent } from './add-car-details/add-car-details.compon
     RegistrationPageComponent,
     SideNavigationBarComponent,
     AdminDashboardComponent,
-    AddCarDetailsComponent
+    AddCarDetailsComponent,
+    UserpageComponent
   ],
   imports: [
     BrowserModule,

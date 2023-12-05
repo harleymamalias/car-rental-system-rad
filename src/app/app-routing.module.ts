@@ -4,12 +4,14 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { RegistrationPageComponent } from './registration-page/registration-page.component';
 import { SideNavigationBarComponent } from './side-navigation-bar/side-navigation-bar.component';
+import { UserpageComponent } from './userpage/userpage.component';
 
 const routes: Routes = [
   {path: '', component: LandingPageComponent},
   {path: 'login-page', component: LoginPageComponent},
   {path: 'registration-page', component: RegistrationPageComponent},
-  {path: 'side-navigation-bar', component: SideNavigationBarComponent}
+  {path: 'side-navigation-bar', component: SideNavigationBarComponent},
+  {path:'userpage', component:UserpageComponent},
 ];
 
 @NgModule({
