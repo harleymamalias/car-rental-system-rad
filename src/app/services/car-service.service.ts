@@ -4,7 +4,7 @@ import { Observable, map } from 'rxjs';
 // import { AngularFirestore } from '@angular/fire/firestore';
 
 interface CarDetails {
-  id: number;
+  id: string;
   make: string; 
   carType: string;
   fuelType: string;
@@ -42,9 +42,9 @@ export class CarServiceService {
     return this.firestore.collection<RentDetails>('rented-vehicles').valueChanges();
   }
 
-  getCarById(id: number): Observable<CarDetails | undefined> {
+  getCarById(id: string): Observable<CarDetails | undefined> {
     return this.getCarRentalDetails().pipe(
-      map((cars: any[]) => cars.find((car: { id: number; }) => car.id === id))
+      map((cars: any[]) => cars.find((car: { id: string; }) => car.id === id))
     );
   }
 

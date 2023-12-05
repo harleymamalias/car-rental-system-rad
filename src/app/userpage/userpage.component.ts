@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 
 interface CarDetails {
-  id: number; 
+  id: string; 
   make: string;
   carType: string;
   fuelType: string;

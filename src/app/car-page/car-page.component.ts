@@ -4,7 +4,7 @@ import { CarServiceService } from '../services/car-service.service';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 interface CarDetails {
-  id: number;
+  id: string;
   make: string;
   carType: string;
   fuelType: string;
@@ -24,6 +24,7 @@ export class CarPageComponent implements OnInit {
   car!: CarDetails;
   cars: CarDetails[] = [];
   formData: any = {};
+  retrievedUsername: string | undefined;
 
   constructor(
     private carService: CarServiceService,
@@ -31,55 +32,41 @@ export class CarPageComponent implements OnInit {
     private firestore: AngularFirestore
   ) {}
 
-  
-
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    this.retrievedUsername = await this.carService.getSessionData('username') || 'No username found';
     console.log('CarPageComponent initialized');
-    // Fetch all car details
+    
     this.carService.getCarRentalDetails().subscribe(
       (cars: CarDetails[]) => {
         this.cars = cars;
+  
+        
+      this.route.params.subscribe((params) => {
+        const carId = params['id'];
 
-        // Find the matched car based on route parameter
-        this.route.params.subscribe((params) => {
-          const carId = params['id'];
+        if (carId) {
+          const matchedCar = this.cars.find((car) => car.id === carId);
 
-          if (carId) {
-            const matchedCar = this.cars.find((car) => car.id === +carId);
-
-            if (matchedCar) {
-              // Car found, assign it
-              this.car = matchedCar;
-              console.log('Car Data:', this.car);
-            } else {
-              console.error(`Car not found for id: ${carId}`);
-            }
+          if (matchedCar) {
+            this.car = matchedCar;
+            console.log('Car Data:', this.car);
           } else {
-            console.error('Car ID not provided in route params');
+            console.error(`Car not found for id: ${carId}`);
           }
-        });
-      },
-      (error: any) => {
-        console.error('Error fetching car details:', error);
-      }
-    );
-  }
+        } else {
+          console.error('Car ID not provided in route params');
+        }
+      });
+    },
+    (error: any) => {
+      console.error('Error fetching car details:', error);
+    }
+  );
+}
 
   onSubmit() {
-    // Push the formData object to Firebase
-    const combinedData = {
-      carDetails: {
-        make: this.car.make,
-        model: this.car.model,
-        year: this.car.year,
-        price: this.car.bookingPrice,
-        // Add other car details as needed
-      },
-      formData: this.formData,
-    };
+    formData: this.formData,
     this.firestore.collection('rented-vehicles').add(this.formData);
-
-    // Clear the form after submission if needed
     this.formData = {};
   }
 }

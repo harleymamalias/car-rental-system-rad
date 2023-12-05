@@ -31,9 +31,6 @@ export class RentedCarPageComponent {
       (rentedCars: RentDetails[]) => {
         this.rentedCars = rentedCars;
         console.log('Rented cars:', this.rentedCars);
-        
-        // Here you can process the rented cars as needed
-        // For example, you might want to filter or transform the data
         this.filteredRentedCars = this.rentedCars.filter(car => car.username === this.retrievedUsername);
       },
       error => {
