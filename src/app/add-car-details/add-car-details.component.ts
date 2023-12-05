@@ -4,7 +4,7 @@ import { CarRentalDetailsService } from '../car-rental-details.service';
 import { Observable } from 'rxjs';
 
 interface CarDetails {
-  id: string; 
+  id: number; 
   make: string;
   carType: string;
   fuelType: string;
@@ -45,12 +45,13 @@ export class AddCarDetailsComponent implements OnInit {
       carImages: [[]]
     });
 
-    // Subscribe to form changes and handle the id field accordingly
     this.carForm.valueChanges.subscribe((formValues) => {
     });
   }
 
   onSubmit(): void {
+    // console.log('button is working');
+    // console.log('Form Validity:', this.carForm.valid);
     if (this.carForm.valid) {
       const newCar: CarDetails = {
         id: this.carForm.value.id,
@@ -73,15 +74,6 @@ export class AddCarDetailsComponent implements OnInit {
         });
 
       this.carForm.reset();
-    }
-  }
-
-  deleteItem(id: string | undefined | null): void {
-    console.log('Deleting item with ID:', id);
-    if (id !== undefined && id !== null) {
-      this.carService.deleteCarRentalDetail(id)
-        .then(() => console.log('Document deleted successfully'))
-        .catch(error => console.error('Error deleting document:', error));
     }
   }
 }

@@ -4,7 +4,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
 
 interface CarDetails {
-  id: string;
+  id: number;
   make: string;
   carType: string;
   fuelType: string;
@@ -14,6 +14,8 @@ interface CarDetails {
   bookingPrice: number;
   carImages: File[];
 }
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -30,13 +32,15 @@ export class CarRentalDetailsService {
     return carCollection.add(carDetail);
   }
 
-  updateCarRentalDetail(id: string, carDetail: CarDetails): Promise<void> {
-    const carDoc = this.firestore.collection<CarDetails>('car-rental-details').doc(id);
-    return carDoc.update(carDetail);
-  }
+  // updateCarRentalDetail(id: string, carDetail: CarDetails): Promise<void> {
+  //   const carDoc = this.firestore.collection<CarDetails>('car-rental-details').doc(id);
+  //   return carDoc.update(carDetail);
+  // }
 
-  deleteCarRentalDetail(id: string): Promise<void> {
-    const carDoc = this.firestore.collection<CarDetails>('car-rental-details').doc(id);
-    return carDoc.delete();
-  }
+  // deleteCarRentalDetail(id: string): Promise<void> {
+  //   const carDoc = this.firestore.collection<CarDetails>('car-rental-details').doc(id);
+  //   return carDoc.delete();
+  // }
+
+  // getRentedVehiclesDetails(): Observable<Car 
 }
