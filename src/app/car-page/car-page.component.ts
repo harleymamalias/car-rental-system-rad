@@ -21,10 +21,14 @@ interface CarDetails {
   styleUrls: ['./car-page.component.scss'],
 })
 export class CarPageComponent implements OnInit {
+updateTotalAmount() {
+throw new Error('Method not implemented.');
+}
   car!: CarDetails;
   cars: CarDetails[] = [];
   formData: any = {};
   retrievedUsername: string | undefined;
+  totalAmount!: number;
 
   constructor(
     private carService: CarServiceService,
@@ -66,7 +70,17 @@ export class CarPageComponent implements OnInit {
 
   onSubmit() {
     formData: this.formData,
+    this.formData.username = this.retrievedUsername;
+    // this.formData.totalAmount = this.calculateTotalAmount();
     this.firestore.collection('rented-vehicles').add(this.formData);
     this.formData = {};
+  }
+
+  calculateTotalAmount() {
+    if (this.car && this.formData.numDays) {
+      this.formData.amount = this.car.bookingPrice * this.formData.numDays;
+    } else {
+      this.formData.amount = 0;
+    }
   }
 }

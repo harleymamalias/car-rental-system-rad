@@ -2,7 +2,7 @@
 <div class="container-fluid parentContainer">
     <div class="container child-1">
 
-        <img src="assets\rad-logo-text.svg" class="img-fluid" alt="Image">  
+        <img src="assets\rad-logo-text.svg" class="img-fluid img" alt="Image">  
         <div class="btn-group-vertical btn-nav" role="group" aria-label="Vertical button group">
 
             <a routerLink=""><button type="button" class="btn navbtn"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home" class="iconSize"></mat-icon>HOME</button></a>
@@ -40,7 +40,7 @@
             <div class="container grandchild-1">
 
                 <div class="name" *ngIf="car">
-                    {{car.make}}{{car.model}}{{car.year}}
+                    {{car.make}} - {{car.model}} - {{car.year}}
                 </div>
 
                 <div class="image" *ngIf="car">
@@ -78,25 +78,10 @@
                             <div class="col-md-6">
                                 <h4>Booking Details</h4>
 
-                                <!-- <div class="form-group mb-1" *ngIf="car">
-                                    <label for="carName">Car Name</label>
-                                    <input type="text" class="form-control" id="carName" value="{{car.make}}-{{car.model}}-{{car.year}}" [(ngModel)]="formData.carName" [ngModelOptions]="{standalone: true}" required>
-                                </div> -->
-
                                 <div class="form-group mb-1">
                                     <label for="numDays">Number of Days</label>
-                                    <input type="number" class="form-control" id="numDays" [(ngModel)]="formData.numDays" name="numDays"  required>
+                                    <input type="number" class="form-control" id="numDays" [(ngModel)]="formData.numDays" name="numDays" (input)="calculateTotalAmount()" required>
                                 </div>
-        
-                                <!-- <div class="form-group mb-1">
-                                    <label for="fromDate">From Date</label>
-                                    <input type="date" class="form-control" id="fromDate" formControlName="fromDate" required>
-                                </div>
-        
-                                <div class="form-group mb-1">
-                                    <label for="toDate">To Date</label>
-                                    <input type="date" class="form-control" id="toDate" formControlName="toDate" required>
-                                </div> -->
         
                                 <div class="form-group mb-1">
                                     <label for="pickupLocation">Pick Up Location</label>
@@ -107,11 +92,6 @@
                                     <label for="message">Message (Optional)</label>
                                     <textarea class="form-control" id="message" rows="3" [(ngModel)]="formData.message" name="message" ></textarea>
                                 </div>
-        
-                                <!-- <div class="form-group mb-1" *ngIf="car">
-                                    <label for="price">Price</label>
-                                    <input type="number" class="form-control" [value]="car.bookingPrice" id="price" [(ngModel)]="formData.price" name="price"  required>
-                                </div> -->
         
                                 <div class="form-group mb-1">
                                     <label for="bookingMoney">Booking Money</label>
@@ -125,7 +105,7 @@
                                 <h4>Payment Details</h4>
                                 <div class="form-group mb-1">
                                     <label for="username">Email</label>
-                                    <input type="text" class="form-control" id="username" [(ngModel)]="formData.username" name="username"  required>
+                                    <input type="text" class="form-control" id="username" [value]=" retrievedUsername" [(ngModel)]="formData.username" name="username"  readonly>
                                 </div>
         
                                 <div class="form-group mb-1">
@@ -138,8 +118,8 @@
                                 </div>
         
                                 <div class="form-group mb-1">
-                                    <label for="amount">Amount</label>
-                                    <input type="number" class="form-control" id="amount" [(ngModel)]="formData.amount" name="amount"  required>
+                                    <label for="totalAmount">Amount</label>
+                                    <input type="number" class="form-control" id="amount" [(ngModel)]="formData.amount" name="amount" [value]="totalAmount"  readonly>
                                 </div>
         
                                 <div class="form-group mb-1">
@@ -159,16 +139,9 @@
 
     </div>
 
-
-
 </div>
 
    
-
-    <div class="container child-2">
-        
-        
-    </div>
 
 
 
