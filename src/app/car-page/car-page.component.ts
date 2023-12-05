@@ -71,6 +71,9 @@ throw new Error('Method not implemented.');
   onSubmit() {
     formData: this.formData,
     this.formData.username = this.retrievedUsername;
+    this.formData.make = this.car.make;
+    this.formData.id = this.car.id;
+    this.formData.model = this.car.model;
     // this.formData.totalAmount = this.calculateTotalAmount();
     this.firestore.collection('rented-vehicles').add(this.formData);
     this.formData = {};

@@ -22,12 +22,13 @@
 
             <img src="assets\Menu.svg" class="img-fluid btn-menu" alt="Image">
             <img src="assets\Alarm.svg" class="img-fluid btn-alarm" alt="Image">
+            <!-- <img src="assets\arrow-down.svg" class="img-fluid btn-arrow" alt="Image"> -->
             <img src="assets\Male User.svg" class="img-fluid btn-user" alt="Image">
             <div class="user-info">            
-                <a href="" class="user-name">LIL BOSS</a><br>
-                <a href="" class="user-type">User</a>
+                <a href="" class="user-name">{{retrievedUsername}}</a><br>
+                <!-- <a href="" class="user-type">User</a> -->
             </div>
-            <img src="assets\arrow-down.svg" class="img-fluid btn-arrow" alt="Image">
+           
 
         </div>
 
@@ -40,6 +41,7 @@
                       <tr>
                         <th scope="col" class="header">Username</th>
                         <th scope="col" class="header">Full Name</th>
+                        <!-- <th scope="col" class="header">Car Details</th> -->
                         <th scope="col" class="header">Total Amount</th>
                         <th scope="col" class="header">Days Rented</th>
                         <th scope="col" class="header">Down Payment</th>
@@ -52,6 +54,7 @@
                       <tr *ngFor="let car of filteredRentedCars">
                         <th scope="row">{{car.username}}</th>
                         <td>{{car.fullname}}</td>
+                        <!-- <td>{{car.id}}: {{car.make}} - {{car.model}}</td> -->
                         <td>{{car.amount}}</td>
                         <td>{{car.numDays}}</td>
                         <td>{{car.downPayment}}</td>                        

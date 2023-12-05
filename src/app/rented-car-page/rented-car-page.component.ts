@@ -12,6 +12,9 @@ interface RentDetails{
   returnDate: string;
   pickupLocation: string;
   fullname: string;
+  make: string;
+  id: string;
+  model: string;
 }
 
 @Component({
