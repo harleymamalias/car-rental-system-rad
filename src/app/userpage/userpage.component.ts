@@ -20,11 +20,25 @@ export class UserpageComponent implements OnInit{
 
     this.route.params.subscribe(params => {
       if (params['searchTerm'])
-        this.cars = this.carService.getAllCarsBySearchTerm(params['searchTerm']);
-      else if(params['tag'])
-        this.cars = this.carService.getAllCarsByTag(params['tag']);
+      this.carService.getAllCarsBySearchTerm(params['searchTerm']).subscribe(
+        cars => {
+          this.cars = cars;
+        },
+        error => {
+          console.log("error userpage");
+        }
+      );
+      // else if(params['tag'])
+      //   this.cars = this.carService.getAllCarsByTag(params['tag']);
       else
-        this.cars = this.carService.getAll();
+        this.carService.getAll().subscribe(
+        cars => {
+          this.cars = cars;
+        },
+        error => {
+          console.log("error userpage");
+        }
+      );
     })
   } 
 }

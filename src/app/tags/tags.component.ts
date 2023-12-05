@@ -15,7 +15,7 @@ export class TagsComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.tags = this.carService.getAllTags();
+    // this.tags = this.carService.getAllTags();
   }
 
 }
