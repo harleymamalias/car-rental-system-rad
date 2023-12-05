@@ -19,6 +19,7 @@ import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AddCarDetailsComponent } from './add-car-details/add-car-details.component';
 import { UserpageComponent } from './userpage/userpage.component';
+import { CarPageComponent } from './car-page/car-page.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { UserpageComponent } from './userpage/userpage.component';
     SideNavigationBarComponent,
     AdminDashboardComponent,
     AddCarDetailsComponent,
-    UserpageComponent
+    UserpageComponent,
+    CarPageComponent
   ],
   imports: [
     BrowserModule,
