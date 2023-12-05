@@ -1,4 +1,3 @@
-<!-- <pre>{{ car | json }}</pre> -->
 <div class="container-fluid parentContainer">
     <div class="container child-1">
 
@@ -78,24 +77,29 @@
                             <div class="col-md-6">
                                 <h4>Booking Details</h4>
 
-                                <div class="form-group mb-1">
+                                <div class="form-group mb-2">
+                                    <label for="fullname">Full Name</label>
+                                    <input type="text" class="form-control" id="fullname" [(ngModel)]="formData.fullname" name="fullname"  required>
+                                </div>
+
+                                <div class="form-group mb-2">
                                     <label for="numDays">Number of Days</label>
                                     <input type="number" class="form-control" id="numDays" [(ngModel)]="formData.numDays" name="numDays" (input)="calculateTotalAmount()" required>
                                 </div>
         
-                                <div class="form-group mb-1">
+                                <div class="form-group mb-2">
                                     <label for="pickupLocation">Pick Up Location</label>
                                     <input type="text" class="form-control" id="pickupLocation" [(ngModel)]="formData.pickupLocation" name="pickupLocation"  required>
                                 </div>
         
-                                <div class="form-group mb-1">
+                                <div class="form-group mb-2">
                                     <label for="message">Message (Optional)</label>
                                     <textarea class="form-control" id="message" rows="3" [(ngModel)]="formData.message" name="message" ></textarea>
                                 </div>
         
-                                <div class="form-group mb-1">
-                                    <label for="bookingMoney">Booking Money</label>
-                                    <input type="number" class="form-control" id="bookingMoney" placeholder="Advance payment" [(ngModel)]="formData.bookingMoney" name="bookingMoney"  required>
+                                <div class="form-group mb-2">
+                                    <label for="downPayment">Down Payment</label>
+                                    <input type="number" class="form-control" id="downPayment" placeholder="Initial Deposit" [(ngModel)]="formData.downPayment" name="downPayment"  required>
                                 </div>
         
                             </div>
@@ -103,28 +107,37 @@
                             <div class="col-md-6">
                                 
                                 <h4>Payment Details</h4>
-                                <div class="form-group mb-1">
+                                <div class="form-group mb-2">
                                     <label for="username">Email</label>
                                     <input type="text" class="form-control" id="username" [value]=" retrievedUsername" [(ngModel)]="formData.username" name="username"  readonly>
                                 </div>
+
+                                
         
-                                <div class="form-group mb-1">
+                                <div class="form-group mb-2">
                                     <label for="paymentMethod">Payment Method</label>
                                     <select class="form-control" id="paymentMethod" [(ngModel)]="formData.paymentMethod" name="paymentMethod"  required>
-                                        <option value="creditCard">Credit Card</option>
-                                        <option value="debitCard">Debit Card</option>
-                                        <option value="paypal">PayPal</option>
+                                        <option value="CreditCard">Credit Card</option>
+                                        <option value="Debit Card">Debit Card</option>
+                                        <option value="Paypal">PayPal</option>
+                                        <option value="Cash">Cash</option>
+                                        <option value="Gcash">Gcash</option>
                                     </select>
                                 </div>
         
-                                <div class="form-group mb-1">
+                                <div class="form-group mb-2">
                                     <label for="totalAmount">Amount</label>
                                     <input type="number" class="form-control" id="amount" [(ngModel)]="formData.amount" name="amount" [value]="totalAmount"  readonly>
                                 </div>
         
-                                <div class="form-group mb-1">
-                                    <label for="dateOfPayment">Date of Payment</label>
-                                    <input type="date" class="form-control" id="dateOfPayment" [(ngModel)]="formData.dateOfPayment" name="dateOfPayment"  required>
+                                <div class="form-group mb-2">
+                                    <label for="bookingDate">Booking Date</label>
+                                    <input type="date" class="form-control" id="bookingDate" [(ngModel)]="formData.bookingDate" name="bookingDate"  required>
+                                </div>
+
+                                <div class="form-group mb-2">
+                                    <label for="returnDate">Return Date</label>
+                                    <input type="date" class="form-control" id="returnDate" [(ngModel)]="formData.returnDate" name="returnDate"  required>
                                 </div>
         
                             </div>

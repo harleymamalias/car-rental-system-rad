@@ -17,13 +17,15 @@ interface CarDetails {
 
 interface RentDetails{
   amount: number;
-  bookingMoney: number;
+  downPayment: number;
   dateOfPayment: string;
   username: string;
   message: string;
   numDays: number;
-  paymentMethod: string;
+  bookingDate: string;
+  returnDate: string;
   pickupLocation: string;
+  fullname: string;
 }
 
 @Injectable({

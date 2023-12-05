@@ -38,22 +38,26 @@
                 <table class="table">
                     <thead>
                       <tr>
-                        <th scope="col" class="header">Customer Name</th>
-                        <th scope="col" class="header">Amount</th>
+                        <th scope="col" class="header">Username</th>
+                        <th scope="col" class="header">Full Name</th>
+                        <th scope="col" class="header">Total Amount</th>
                         <th scope="col" class="header">Days Rented</th>
-                        <th scope="col" class="header">payment Method</th>
-                        <th scope="col" class="header">Date of Payment</th>
+                        <th scope="col" class="header">Down Payment</th>
                         <th scope="col" class="header">Location</th>
+                        <th scope="col" class="header">Booking Date</th>
+                        <th scope="col" class="header">Return Date</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr *ngFor="let car of filteredRentedCars">
                         <th scope="row">{{car.username}}</th>
+                        <td>{{car.fullname}}</td>
                         <td>{{car.amount}}</td>
                         <td>{{car.numDays}}</td>
-                        <td>{{car.paymentMethod}}</td>
-                        <td>{{car.dateOfPayment}}</td>
+                        <td>{{car.downPayment}}</td>                        
                         <td>{{car.pickupLocation}}</td>
+                        <td>{{car.bookingDate}}</td>
+                        <td>{{car.returnDate}}</td>
                       </tr>
                     </tbody>  
                   </table>

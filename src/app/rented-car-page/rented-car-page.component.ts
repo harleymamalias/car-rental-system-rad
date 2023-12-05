@@ -3,13 +3,15 @@ import { CarServiceService } from '../services/car-service.service';
 
 interface RentDetails{
   amount: number;
-  bookingMoney: number;
+  downPayment: number;
   dateOfPayment: string;
   username: string;
   message: string;
   numDays: number;
-  paymentMethod: string;
+  bookingDate: string;
+  returnDate: string;
   pickupLocation: string;
+  fullname: string;
 }
 
 @Component({
