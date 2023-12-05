@@ -43,7 +43,8 @@
                 </div>
 
                 <div class="image" *ngIf="car">
-                    <img src="{{car.carImages}}" alt="Image"/>
+                    <!-- <img src="{{car.carImages}}" alt="Image"/> -->
+                    <img src="assets/Car.png" alt="Image"/>
                 </div>
         
                 <div class="details" *ngIf="car">                            
@@ -77,27 +78,27 @@
                             <div class="col-md-6">
                                 <h4>Booking Details</h4>
 
-                                <div class="form-group mb-2">
+                                <div class="form-group mb-3">
                                     <label for="fullname">Full Name</label>
                                     <input type="text" class="form-control" id="fullname" [(ngModel)]="formData.fullname" name="fullname"  required>
                                 </div>
 
-                                <div class="form-group mb-2">
+                                <div class="form-group mb-3">
                                     <label for="numDays">Number of Days</label>
                                     <input type="number" class="form-control" id="numDays" [(ngModel)]="formData.numDays" name="numDays" (input)="calculateTotalAmount()" required>
                                 </div>
         
-                                <div class="form-group mb-2">
+                                <div class="form-group mb-3">
                                     <label for="pickupLocation">Pick Up Location</label>
                                     <input type="text" class="form-control" id="pickupLocation" [(ngModel)]="formData.pickupLocation" name="pickupLocation"  required>
                                 </div>
         
-                                <div class="form-group mb-2">
+                                <div class="form-group mb-3">
                                     <label for="message">Message (Optional)</label>
                                     <textarea class="form-control" id="message" rows="3" [(ngModel)]="formData.message" name="message" ></textarea>
                                 </div>
         
-                                <div class="form-group mb-2">
+                                <div class="form-group mb-3">
                                     <label for="downPayment">Down Payment</label>
                                     <input type="number" class="form-control" id="downPayment" placeholder="Initial Deposit" [(ngModel)]="formData.downPayment" name="downPayment"  required>
                                 </div>
@@ -107,14 +108,14 @@
                             <div class="col-md-6">
                                 
                                 <h4>Payment Details</h4>
-                                <div class="form-group mb-2">
+                                <div class="form-group mb-3">
                                     <label for="username">Email</label>
                                     <input type="text" class="form-control" id="username" [value]=" retrievedUsername" [(ngModel)]="formData.username" name="username"  readonly>
                                 </div>
 
                                 
         
-                                <div class="form-group mb-2">
+                                <div class="form-group mb-3">
                                     <label for="paymentMethod">Payment Method</label>
                                     <select class="form-control" id="paymentMethod" [(ngModel)]="formData.paymentMethod" name="paymentMethod"  required>
                                         <option value="CreditCard">Credit Card</option>
@@ -125,17 +126,17 @@
                                     </select>
                                 </div>
         
-                                <div class="form-group mb-2">
+                                <div class="form-group mb-3">
                                     <label for="totalAmount">Amount</label>
                                     <input type="number" class="form-control" id="amount" [(ngModel)]="formData.amount" name="amount" [value]="totalAmount"  readonly>
                                 </div>
         
-                                <div class="form-group mb-2">
+                                <div class="form-group mb-3">
                                     <label for="bookingDate">Booking Date</label>
                                     <input type="date" class="form-control" id="bookingDate" [(ngModel)]="formData.bookingDate" name="bookingDate"  required>
                                 </div>
 
-                                <div class="form-group mb-2">
+                                <div class="form-group mb-3">
                                     <label for="returnDate">Return Date</label>
                                     <input type="date" class="form-control" id="returnDate" [(ngModel)]="formData.returnDate" name="returnDate"  required>
                                 </div>

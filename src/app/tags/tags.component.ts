@@ -27,10 +27,10 @@ export class TagsComponent implements OnInit {
   getAllTags(): Tag[] {
     return [
       { name: 'All', count: 8 },
-      { name: 'Vios', count: 6 },
-      { name: 'Xpander', count: 1 },
-      { name: 'Hilux', count: 1 },
-      { name: 'Yamaha', count: 1 },
+      { name: 'Ford', count: 6 },
+      { name: 'Xpander', count: 5 },
+      { name: 'Hilux', count: 3 },
+      { name: 'Toyota', count: 4 },
     ];
   }
 }
