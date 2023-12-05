@@ -77,7 +77,7 @@ export class CarPageComponent implements OnInit {
       },
       formData: this.formData,
     };
-    this.firestore.collection('rented-vehicles').add(combinedData);
+    this.firestore.collection('rented-vehicles').add(this.formData);
 
     // Clear the form after submission if needed
     this.formData = {};

@@ -6,6 +6,7 @@ import { RegistrationPageComponent } from './registration-page/registration-page
 import { SideNavigationBarComponent } from './side-navigation-bar/side-navigation-bar.component';
 import { UserpageComponent } from './userpage/userpage.component';
 import { CarPageComponent } from './car-page/car-page.component';
+import { RentedCarPageComponent } from './rented-car-page/rented-car-page.component';
 
 const routes: Routes = [
   {path: '', component: LandingPageComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'side-navigation-bar', component: SideNavigationBarComponent},
   {path:'userpage', component:UserpageComponent},
   {path:'car/:id', component:CarPageComponent},
+  {path:'rented', component:RentedCarPageComponent},
 ];
 
 @NgModule({

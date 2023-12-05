@@ -15,6 +15,17 @@ interface CarDetails {
   carImages: File[];
 }
 
+interface RentDetails{
+  amount: number;
+  bookingMoney: number;
+  dateOfPayment: string;
+  username: string;
+  message: string;
+  numDays: number;
+  paymentMethod: string;
+  pickupLocation: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -27,9 +38,32 @@ export class CarServiceService {
     return this.firestore.collection<CarDetails>('car-rental-details').valueChanges();
   }
 
+  getRentedCars(): Observable<RentDetails[]> {
+    return this.firestore.collection<RentDetails>('rented-vehicles').valueChanges();
+  }
+
   getCarById(id: number): Observable<CarDetails | undefined> {
     return this.getCarRentalDetails().pipe(
       map((cars: any[]) => cars.find((car: { id: number; }) => car.id === id))
     );
   }
+
+  setSessionData(key: string, value: any): Promise<void> {
+    return this.firestore.collection('sessions').doc(key).set({ value });
+  }
+
+  getSessionData(key: string): Promise<any | undefined> {
+    return this.firestore.collection('sessions').doc(key).get().toPromise()
+      .then(snapshot => {
+        if (snapshot && snapshot.exists) {
+          return snapshot.data() as { value: any }; // Explicit type assertion
+        } else {
+          return undefined;
+        }
+      })
+      .then(data => data?.value);
+  }
+  
+  
+  
 }

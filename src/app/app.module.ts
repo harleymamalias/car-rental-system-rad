@@ -20,6 +20,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AddCarDetailsComponent } from './add-car-details/add-car-details.component';
 import { UserpageComponent } from './userpage/userpage.component';
 import { CarPageComponent } from './car-page/car-page.component';
+import { RentedCarPageComponent } from './rented-car-page/rented-car-page.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CarPageComponent } from './car-page/car-page.component';
     AdminDashboardComponent,
     AddCarDetailsComponent,
     UserpageComponent,
-    CarPageComponent
+    CarPageComponent,
+    RentedCarPageComponent
   ],
   imports: [
     BrowserModule,

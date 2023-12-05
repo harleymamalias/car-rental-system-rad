@@ -1,0 +1,72 @@
+<div class="container-fluid parentContainer">
+    <div class="container child-1">
+
+        <img src="assets\userpage-logo.svg" class="img-fluid" alt="Image">  
+        <div class="btn-group-vertical btn-nav" role="group" aria-label="Vertical button group">
+
+          <a routerLink=""><button type="button" class="btn navbtn"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home" class="iconSize"></mat-icon>HOME</button></a>
+
+          <a routerLink="/userpage"><button type="button" class="btn navbtn"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="directions_car" class="iconSize"></mat-icon>CARS FOR RENT</button></a>
+
+          <a routerLink="/rented"><button type="button" class="btn navbtn active"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="car_rental" class="iconSize"></mat-icon>RENTED VEHICLES</button></a>
+
+          <a routerLink="/login-page"><button type="button" class="btn navbtn btn-sign-out"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="logout  " class="iconSize"></mat-icon>SIGN OUT</button></a>  
+
+        </div>
+
+    </div>
+
+    <div class="container child-2">
+
+        <div class="container subchild-1">
+
+            <img src="assets\Menu.svg" class="img-fluid btn-menu" alt="Image">
+            <img src="assets\Alarm.svg" class="img-fluid btn-alarm" alt="Image">
+            <img src="assets\Male User.svg" class="img-fluid btn-user" alt="Image">
+            <div class="user-info">            
+                <a href="" class="user-name">LIL BOSS</a><br>
+                <a href="" class="user-type">User</a>
+            </div>
+            <img src="assets\arrow-down.svg" class="img-fluid btn-arrow" alt="Image">
+
+        </div>
+
+        <div class="container subchild-2">
+
+            <div class="container grandchild-1">   
+              <h1>RENTED CARS</h1>             
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col" class="header">Customer Name</th>
+                        <th scope="col" class="header">Amount</th>
+                        <th scope="col" class="header">Days Rented</th>
+                        <th scope="col" class="header">payment Method</th>
+                        <th scope="col" class="header">Date of Payment</th>
+                        <th scope="col" class="header">Location</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let car of filteredRentedCars">
+                        <th scope="row">{{car.username}}</th>
+                        <td>{{car.amount}}</td>
+                        <td>{{car.numDays}}</td>
+                        <td>{{car.paymentMethod}}</td>
+                        <td>{{car.dateOfPayment}}</td>
+                        <td>{{car.pickupLocation}}</td>
+                      </tr>
+                    </tbody>  
+                  </table>
+            </div>            
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+    
+    
