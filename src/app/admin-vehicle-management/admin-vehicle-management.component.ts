@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CarRentalDetailsService } from '../car-rental-details.service';
 
 interface Car {
-  id: number;
+  id: string;
   make: string;
   model: string;
   carType: string;
@@ -33,13 +33,14 @@ export class AdminVehicleManagementComponent implements OnInit {
     console.log('Edit car with ID:', make);
   }
 
-  // deleteCar(id: number): void {
-  //   this.carService.deleteCarRentalDetail(id)
-  //     .then(() => {
-  //       console.log('Car deleted successfully');
-  //     })
-  //     .catch((error) => {
-  //       console.error('Error deleting car:', error);
-  //     });
-  // }
+  deleteCar(id: string): void {
+    this.carService.deleteCarRentalDetail(id)
+      .then(() => {
+        console.log('Car deleted successfully');
+        this.cars = this.cars.filter(car => car.id !== id);
+      })
+      .catch((error) => {
+        console.error('Error deleting car:', error);
+      });
+  }
 }
