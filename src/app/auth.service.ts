@@ -32,10 +32,15 @@ export class AuthService {
       })
       .catch(error => {
         console.error('Login error', error);
+        this.showLoginErrorAlert();
       });
   }
 
   logout(): void {
     this.userEmail = null;
+  }
+
+  private showLoginErrorAlert(): void {
+    window.alert('Invalid login credentials. Please check your username and password.');
   }
 }
