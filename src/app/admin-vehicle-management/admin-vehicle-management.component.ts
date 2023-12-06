@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CarRentalDetailsService } from '../car-rental-details.service';
 
 interface Car {
-  id: number;
+  id: string;
   make: string;
   model: string;
   carType: string;
