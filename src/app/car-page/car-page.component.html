@@ -4,7 +4,7 @@
         <img src="assets\sidebar-rad-logo.svg" class="img-fluid img" alt="Image">  
         <div class="btn-group-vertical btn-nav" role="group" aria-label="Vertical button group">
 
-            <a routerLink=""><button type="button" class="btn navbtn"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home" class="iconSize"></mat-icon>HOME</button></a>
+            <!-- <a routerLink=""><button type="button" class="btn navbtn"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home" class="iconSize"></mat-icon>HOME</button></a> -->
 
             <a routerLink="/userpage"><button type="button" class="btn navbtn active"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="directions_car" class="iconSize"></mat-icon>CARS FOR RENT</button></a>
 
@@ -27,7 +27,8 @@
             <img src="assets\Alarm.svg" class="img-fluid btn-alarm" alt="Image">
             <img src="assets\Male User.svg" class="img-fluid btn-user" alt="Image">
             <div class="user-info">            
-                <a href="" class="user-name">{{retrievedUsername}}</a><br>
+                <!-- <a href="" class="user-name">{{retrievedUsername}}</a><br> -->
+                <p><strong>{{retrievedUsername}}</strong></p>
                 <!-- <a href="" class="user-type">User</a> -->
             </div>
             <!-- <img src="assets\arrow-down.svg" class="img-fluid btn-arrow" alt="Image"> -->
@@ -43,8 +44,8 @@
                 </div>
 
                 <div class="image" *ngIf="car">
-                    <!-- <img src="{{car.carImages}}" alt="Image"/> -->
-                    <img src="assets/Car.png" alt="Image"/>
+                    <img src="{{car.carImages}}" alt="Image"/>
+                    <!-- <img src="assets/Car.png" alt="Image"/> -->
                 </div>
         
                 <div class="details" *ngIf="car">                            
@@ -73,7 +74,7 @@
 
                 <div class="container mt-4">
 
-                    <form (ngSubmit)="onSubmit()">
+                    <form (ngSubmit)="onValidation()" #form="ngForm" novalidate>
                         <div class="row">
                             <div class="col-md-6">
                                 <h4>Booking Details</h4>
@@ -81,26 +82,41 @@
                                 <div class="form-group mb-3">
                                     <label for="fullname">Full Name</label>
                                     <input type="text" class="form-control" id="fullname" [(ngModel)]="formData.fullname" name="fullname"  required>
+                                    <div *ngIf="form.controls['fullname']?.invalid && form.controls['fullname']?.touched" class="text-danger">
+                                        Full Name is required.
+                                      </div>
                                 </div>
 
                                 <div class="form-group mb-3">
                                     <label for="numDays">Number of Days</label>
                                     <input type="number" class="form-control" id="numDays" [(ngModel)]="formData.numDays" name="numDays" (input)="calculateTotalAmount()" required>
+                                    <div *ngIf="form.controls['numDays']?.invalid && form.controls['numDays']?.touched" class="text-danger">
+                                        Number of Days is required.
+                                      </div>
                                 </div>
         
                                 <div class="form-group mb-3">
                                     <label for="pickupLocation">Pick Up Location</label>
                                     <input type="text" class="form-control" id="pickupLocation" [(ngModel)]="formData.pickupLocation" name="pickupLocation"  required>
+                                    <div *ngIf="form.controls['pickupLocation']?.invalid && form.controls['pickupLocation']?.touched" class="text-danger">
+                                        Pick Up Location is required.
+                                      </div>
                                 </div>
         
                                 <div class="form-group mb-3">
                                     <label for="message">Message (Optional)</label>
                                     <textarea class="form-control" id="message" rows="3" [(ngModel)]="formData.message" name="message" ></textarea>
+                                    <!-- <div *ngIf="form.controls['message']?.invalid && form.controls['message']?.touched" class="text-danger">
+                                        Pick Up Location is required.
+                                      </div> -->
                                 </div>
         
                                 <div class="form-group mb-3">
                                     <label for="downPayment">Down Payment</label>
                                     <input type="number" class="form-control" id="downPayment" placeholder="Initial Deposit" [(ngModel)]="formData.downPayment" name="downPayment"  required>
+                                    <div *ngIf="form.controls['downPayment']?.invalid && form.controls['downPayment']?.touched" class="text-danger">
+                                        Down Payment is required.
+                                      </div>
                                 </div>
         
                             </div>
@@ -111,6 +127,9 @@
                                 <div class="form-group mb-3">
                                     <label for="username">Email</label>
                                     <input type="text" class="form-control" id="username" [value]=" retrievedUsername" [(ngModel)]="formData.username" name="username"  readonly>
+                                    <!-- <div *ngIf="form.controls['username']?.invalid && form.controls['username']?.touched" class="text-danger">
+                                        Pick Up Location is required.
+                                      </div> -->
                                 </div>
 
                                 
@@ -124,21 +143,33 @@
                                         <option value="Cash">Cash</option>
                                         <option value="Gcash">Gcash</option>
                                     </select>
+                                    <div *ngIf="form.controls['paymentMethod']?.invalid && form.controls['paymentMethod']?.touched" class="text-danger">
+                                        Payment Method is required.
+                                      </div>
                                 </div>
         
                                 <div class="form-group mb-3">
                                     <label for="totalAmount">Amount</label>
                                     <input type="number" class="form-control" id="amount" [(ngModel)]="formData.amount" name="amount" [value]="totalAmount"  readonly>
+                                    <!-- <div *ngIf="form.controls['amount']?.invalid && form.controls['amount']?.touched" class="text-danger">
+                                        Amount is required.
+                                      </div> -->
                                 </div>
         
                                 <div class="form-group mb-3">
                                     <label for="bookingDate">Booking Date</label>
                                     <input type="date" class="form-control" id="bookingDate" [(ngModel)]="formData.bookingDate" name="bookingDate"  required>
+                                    <div *ngIf="form.controls['bookingDate']?.invalid && form.controls['bookingDate']?.touched" class="text-danger">
+                                        Booking Date is required.
+                                      </div>
                                 </div>
 
                                 <div class="form-group mb-3">
                                     <label for="returnDate">Return Date</label>
                                     <input type="date" class="form-control" id="returnDate" [(ngModel)]="formData.returnDate" name="returnDate"  required>
+                                    <div *ngIf="form.controls['returnDate']?.invalid && form.controls['returnDate']?.touched" class="text-danger">
+                                        Return Date is required.
+                                      </div>
                                 </div>
         
                             </div>

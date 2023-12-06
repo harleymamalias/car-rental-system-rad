@@ -3,7 +3,7 @@
         <img src="assets\sidebar-rad-logo.svg" class="img-fluid img" alt="Image">        
         <div class="btn-group-vertical btn-nav" role="group" aria-label="Vertical button group">
 
-            <a routerLink=""><button type="button" class="btn navbtn"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home" class="iconSize"></mat-icon>HOME</button></a>
+            <!-- <a routerLink=""><button type="button" class="btn navbtn"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home" class="iconSize"></mat-icon>HOME</button></a> -->
 
             <a routerLink="/userpage"><button type="button" class="btn navbtn active"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="directions_car" class="iconSize"></mat-icon>CARS FOR RENT</button></a>
 
@@ -24,8 +24,8 @@
                     <a routerLink="/car/{{car.id}}">
                         <div class="imageUrl">
                             <button type="button" class="btn btn-danger compactbtn">Compact</button>
-                            <!-- <img src="{{car.carImages}}" alt="" class="image1"> -->
-                            <img src="assets/Car.png" alt="" class="image1">
+                            <img src="{{car.carImages}}" alt="" class="image1">
+                            <!-- <img src="assets/Car.png" alt="" class="image1"> -->
                         </div>
                         
                         <div class="content1">
