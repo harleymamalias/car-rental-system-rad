@@ -1,0 +1,62 @@
+<app-admin-sidebar></app-admin-sidebar>
+<app-admin-sidebar></app-admin-sidebar>
+  <div class="wrapper">
+      <!-- Page Content  -->
+      <div id="content">
+        <app-admin-navbar></app-admin-navbar>
+        <div class="container">
+          <div class="row" style="box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;">
+            <div class="row row-container justify-content-between">
+              <div class="col-auto text-end d-flex justify-content-center align-items-center">
+                <h2 class="d-inline"><strong>CUSTOMER BOOKINGS</strong></h2>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <table class="table"
+              style="box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;">
+              <thead class="table-danger">
+                <tr>
+                  <th scope="col">Customer Name</th>
+                  <th scope="col">Car ID</th>
+                  <th scope="col">Rented Vehicle</th>
+                  <th scope="col">Booking Date</th>
+                  <th scope="col">Rental Duration</th>
+                  <th scope="col">Pick-up Location</th>
+                  <th scope="col">Amount Paid</th>
+                  <th scope="col">Payment Method</th>
+                  <th scope="col">Return Date</th>                  
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let vehicle of rentedVehicles">
+                  <td>{{ vehicle.fullname }}</td>
+                  <td>{{ vehicle.id }}</td>
+                  <td>{{ vehicle.make }} - {{ vehicle.model }}</td>
+                  <td>{{ vehicle.bookingDate }}</td>
+                  <td>{{ vehicle.numDays }}</td>
+                  <td>{{ vehicle.pickupLocation }}</td>
+                  <td>₱{{ vehicle.amount }}</td>
+                  <td>{{ vehicle.paymentMethod }}</td>
+                  <td>{{ vehicle.returnDate }}</td>
+                  <td>Successful</td>
+                </tr>
+              </tbody>              
+            </table>
+          </div>
+        </div>
+        <br>
+        <br><br><br>
+    
+      </div>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var sidebarCollapse = document.getElementById('sidebarCollapse');
+        sidebarCollapse.addEventListener('click', function () {
+          var sidebar = document.getElementById('sidebar');
+          sidebar.classList.toggle('active');
+        });
+      });
+    </script>

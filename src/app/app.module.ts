@@ -18,11 +18,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AddCarDetailsComponent } from './add-car-details/add-car-details.component';
-import { UserpageComponent } from './userpage/userpage.component';
-import { CarPageComponent } from './car-page/car-page.component';
-import { RentedCarPageComponent } from './rented-car-page/rented-car-page.component';
-import { SearchComponent } from './search/search.component';
+import { UserSideBarComponent } from './user-side-bar/user-side-bar.component';
 import { TagsComponent } from './tags/tags.component';
+import { SearchComponent } from './search/search.component';
+import { UserpageComponent } from './userpage/userpage.component';
+import { RentedCarPageComponent } from './rented-car-page/rented-car-page.component';
+import { CarPageComponent } from './car-page/car-page.component';
+import { AdminSidebarComponent } from './admin-sidebar/admin-sidebar.component';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { getStorage, provideStorage } from '@angular/fire/storage';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AdminVehicleManagementComponent } from './admin-vehicle-management/admin-vehicle-management.component';
+import { AdminBookingTransactionsComponent } from './admin-booking-transactions/admin-booking-transactions.component';
+import { AdminNavbarComponent } from './admin-navbar/admin-navbar.component';
 
 @NgModule({
   declarations: [
@@ -34,11 +42,16 @@ import { TagsComponent } from './tags/tags.component';
     SideNavigationBarComponent,
     AdminDashboardComponent,
     AddCarDetailsComponent,
-    UserpageComponent,
-    CarPageComponent,
-    RentedCarPageComponent,
+    UserSideBarComponent,
+    TagsComponent,
     SearchComponent,
-    TagsComponent
+    UserpageComponent,
+    RentedCarPageComponent,
+    CarPageComponent,
+    AdminSidebarComponent,
+    AdminVehicleManagementComponent,
+    AdminBookingTransactionsComponent,
+    AdminNavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -58,6 +71,9 @@ import { TagsComponent } from './tags/tags.component';
     FormsModule,
     ReactiveFormsModule,
     AngularFireAuthModule,
+    AngularFireModule,
+    provideAuth(() => getAuth()),
+    provideStorage(() => getStorage()),
     FirestoreModule,
   ],
   providers: [
@@ -68,7 +84,7 @@ import { TagsComponent } from './tags/tags.component';
       storageBucket: "rentanddrive-angular-1e5ec.appspot.com",
       messagingSenderId: "692514391678",
       appId: "1:692514391678:web:49be852647a85d1d293a2f"
-    }}
+    }},
   ],
   bootstrap: [AppComponent]
 })

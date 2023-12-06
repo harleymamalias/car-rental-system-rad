@@ -1,0 +1,58 @@
+<app-admin-sidebar></app-admin-sidebar>
+  <div class="wrapper">
+      <!-- Page Content  -->
+      <div id="content">
+        <app-admin-navbar></app-admin-navbar>
+        <div class="container">
+          <div class="row" style="box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;">
+            <div class="row row-container justify-content-between">
+              <div class="col-auto text-end d-flex justify-content-center align-items-center">
+                <h2 class="d-inline"><strong>AVAILABLE CARS FOR RENT</strong></h2>
+              </div>
+              <div class="col-auto">
+                <a [routerLink]="['/add-car-details']" class="rent"><button type="submit" class="btn btn-danger" routerLinkActive="active"><i class="bi bi-plus-square"></i> Add Car</button></a>              
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <table class="table"
+              style="box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;">
+              <thead class="table-warning">
+                <tr>
+                  <th scope="col">Car ID</th>
+                  <th scope="col">Car Make</th>
+                  <th scope="col">Car Model</th>
+                  <th scope="col">Category</th>
+                  <th scope="col">Rental Fee</th>
+                  <th scope="col">Capacity</th>
+                  <th scope="col">Fuel Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let car of cars">
+                  <td>{{ car.id }}</td>
+                  <td>{{ car.make }}</td>
+                  <td>{{ car.model }}</td>
+                  <td>{{ car.carType }}</td>
+                  <td>₱{{ car.bookingPrice }}</td>
+                  <td>{{ car.seatCapacity }}</td>
+                  <td>{{ car.fuelType }}</td>
+                </tr>
+              </tbody>              
+            </table>
+          </div>
+        </div>
+        <br>
+        <br><br><br>
+    
+      </div>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var sidebarCollapse = document.getElementById('sidebarCollapse');
+        sidebarCollapse.addEventListener('click', function () {
+          var sidebar = document.getElementById('sidebar');
+          sidebar.classList.toggle('active');
+        });
+      });
+    </script>

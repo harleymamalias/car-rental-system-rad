@@ -1,0 +1,26 @@
+<div class="container-fluid child-1">
+    <img src="assets/sidebar-rad-logo.svg" class="img-fluid" alt="Image">  
+    <div class="btn-group-vertical btn-nav" role="group" aria-label="Vertical button group">
+      <a [routerLink]="['/side-navigation-bar']" class="rent">
+        <button type="button" class="btn navbtn" routerLinkActive="active">
+          <i class="bi bi-grid-fill"></i> Dashboard
+        </button>
+      </a>
+      <a [routerLink]="['/admin-vehicle-management']" class="rent">
+        <button type="button" class="btn navbtn" routerLinkActive="active">
+          <i class="bi bi-car-front"></i> Vehicle Management
+        </button>
+      </a>
+      <a [routerLink]="['/admin-booking-transactions']" class="rent">
+        <button type="button" class="btn navbtn" routerLinkActive="active">
+          <i class="bi bi-bag-check"></i> Booking Transactions
+        </button>
+      </a>
+      <a [routerLink]="['']" class="rent">
+        <button type="button" class="btn navbtn">
+          <i class="bi bi-box-arrow-left"></i> Sign out
+        </button>
+      </a>
+    </div>
+  </div>
+  

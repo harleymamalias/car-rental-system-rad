@@ -7,6 +7,37 @@ body {
   background: #fafafa;
 }
 
+.container {
+  padding: 1rem 0rem;
+}
+
+.table-image td,
+.table-image th {
+  vertical-align: middle;
+}
+
+.table td {
+  font-weight: normal;
+}
+
+.table th {
+  font-weight: bold;
+  padding: 10px;
+}
+
+.edit-icon {
+  color: white;
+}
+
+.row {
+  margin: 0;
+  padding: 0;
+}
+
+.row-container {
+  padding: 10px
+}
+
 p {
   font-family: 'Poppins', sans-serif;
   font-size: 1.1em;
@@ -58,35 +89,17 @@ a:focus {
 
 
 .total-bookings, .number-of-clients, .total-earnings {
-  height: 170px;
-  width: 30%;
+  height: 140px;
   margin-left: 10px;
   padding: 20px;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 .total-bookings {
-  background-color: #764134;
+  background-color: #6A040F;
   border-radius: 10px;
   color: #ffffff;
-  font-size: 20px;
+  font-size: 1.5em;
 }
-
-.number-of-clients {
-  background-color: #003049;
-  border-radius: 10px;
-  color: #ffffff;
-  font-size: 20px;
-}
-
-.total-earnings {
-  background-color: #3f784c;
-  border-radius: 10px;
-  color: #ffffff;
-  font-size: 20px;
-}
-
-
-
 
 
 
@@ -146,8 +159,9 @@ a:focus {
 }
 .recent-bookings-container{
   padding: 20px;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
+
 
 /* MEDIA QUERIES */
 

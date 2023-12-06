@@ -1,45 +1,84 @@
 <!-- add-car-details.component.html -->
+<div class="wrapper">
+  <!-- Sidebar  -->
+  <app-admin-sidebar></app-admin-sidebar>
+  <!-- Page Content  -->
+  <div id="content">
 
-<div class="add-car-details-container mt-5">
+    <app-admin-navbar></app-admin-navbar>
+  <div class="add-car-details-container mt-5">
     <div class="container">
-      <h2>ADD A NEW VEHICLE</h2>
+      <div class="row">
+        <div class="col-auto">
+          <a routerLink="/admin-vehicle-management" class="btn btn-secondary" style="color: #ffffff;">
+            <i class="bi bi-arrow-left"></i> Back
+          </a>
+        </div>
+        <div class="col-auto">
+          <h2>ADD A NEW VEHICLE</h2>
+        </div>
+      </div>
       <form [formGroup]="carForm" (ngSubmit)="onSubmit()">
         <div class="row mb-3">
           <div class="col-md-4 mt-3">
             <div class="form-group">
-              <label for="validationCustom01">Make</label>
-              <input type="text" class="form-control" id="validationCustom01" placeholder="" formControlName="make" required>
+              <label for="validationCustom01">Car ID</label>
+              <input type="number" class="form-control" id="validationCustom01" placeholder="" formControlName="id" required>
             </div>
           </div>
           <div class="col-md-4 mt-3">
             <div class="form-group w-100">
-              <label for="carType">Car Type</label>
-              <select class="form-select text-left" id="carType" formControlName="carType" required>
-                <option value="Sports Car">Sports Car</option>
-                <option value="Electric Car">Electric Car</option>
-                <option value="Manual Transmission">Manual Transmission</option>
+              <label for="carType">Make</label>
+              <select class="form-select text-left" id="carType" formControlName="make" required>
+                <option value="" disabled selected>Select a car make</option>
+                <option value="Toyota">Toyota</option>
+                <option value="Honda">Honda</option>
+                <option value="Ford">Ford</option>
+                <option value="Chevrolet">Chevrolet</option>
+                <option value="Nissan">Nissan</option>
+                <option value="Hyundai">Hyundai</option>
+                <option value="Kia">Kia</option>
               </select>
             </div>
           </div>
           <div class="col-md-4 mt-3">
-            <div class="form-group w-100">
-              <label for="fuelType">Fuel Type</label>
-              <select class="form-select text-left" id="fuelType" formControlName="fuelType" required>
-                <option value="Petrol">Petrol</option>
-                <option value="Electric">Electric</option>
-                <option value="Manual">Manual</option>
-              </select>
-            </div>
-          </div>
-        </div> 
-        <div class="row mb-3">
-          <div class="col-md-4">
             <div class="form-group">
               <label for="validationCustom01">Model</label>
               <input type="text" class="form-control" id="validationCustom01" placeholder="" formControlName="model" required>
             </div>
-          </div>
-          <div class="col-md-4">
+          </div>           
+        </div> 
+        <div class="row mb-3">
+          <div class="col-md-4 mt-3">
+            <div class="form-group w-100">
+              <label for="carType">Car Type</label>
+              <select class="form-select text-left" id="carType" formControlName="carType" required>
+                <option value="Sedan">Sedan</option>
+                <option value="SUV">SUV</option>
+                <option value="Hatchback">Hatchback</option>
+                <option value="Convertible">Convertible</option>
+                <option value="Coupe">Coupe</option>
+                <option value="Wagon">Wagon</option>
+                <option value="Truck">Truck</option>
+                <option value="Van">Van</option>
+                <option value="Crossover">Crossover</option>
+              </select>
+            </div>
+          </div>          
+          <div class="col-md-4 mt-3">
+            <div class="form-group w-100">
+              <label for="fuelType">Fuel Type</label>
+              <select class="form-select text-left" id="fuelType" formControlName="fuelType" required>
+                <option value="Gasoline">Gasoline</option>
+                <option value="Diesel">Diesel</option>
+                <option value="Electric">Electric</option>
+                <option value="Hybrid">Hybrid</option>
+                <option value="Natural Gas">Natural Gas</option>
+                <option value="Hydrogen">Hydrogen</option>
+              </select>
+            </div>
+          </div>                
+          <div class="col-md-4 mt-3">
             <div class="form-group">
               <label for="validationCustom01">Seat Capacity</label>
               <input type="number" class="form-control" id="validationCustom01" placeholder="" formControlName="seatCapacity" required>
@@ -57,31 +96,36 @@
           <div class="col-md-4">
             <div class="form-group">
               <label for="validationCustom01">Booking Price</label>
-              <input type="number" class="form-control" id="validationCustom01" placeholder="" formControlName="price" min="2000" max="2023" required>
+              <input type="number" class="form-control" id="validationCustom01" placeholder="" formControlName="bookingPrice" required>
             </div>
-          </div>
-          
+          </div>       
         </div>
-  
-        <div class="row mb-3">
+        <!-- <div class="row mb-3">
           <div class="col-md-4">
             <div class="form-group">
-              <label for="formFileMultiple" class="form-label">Car Images</label>
-              <input class="form-control" type="file" id="formFileMultiple" multiple formControlName="carImages">
+              <label for="formFileSingle" class="form-label">Car Image</label>
+              <input class="form-control" type="file" id="formFileSingle" formControlName="carImages">
             </div>
           </div>
-          <!-- Add other fields as needed -->
-        </div>
-        
-        <button type="submit" class="btn btn-primary">Add Car Details</button>
+        </div>        -->
+        <div class="col d-flex justify-content-end">
+          <button type="submit" class="btn btn-success ml-auto"><i class="bi bi-save"></i> Save Changes</button>
+        </div>    
       </form>
-      <br>
-      <ul>
-        <li *ngFor="let cars of carDetails$ | async">
-          {{ cars.make }} - {{ cars.model }} - {{ cars.fuelType }}
-          <button (click)="deleteItem(cars.id)">Delete</button>
-        </li>
-      </ul>      
+      <br>            
     </div>
   </div>
+    <br><br><br><br>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var sidebarCollapse = document.getElementById('sidebarCollapse');
+    sidebarCollapse.addEventListener('click', function () {
+      var sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('active');
+    });
+  });
+</script>
+
   
